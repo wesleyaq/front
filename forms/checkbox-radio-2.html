@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS Radio Buttons and Checkboxes: Border</title>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'> -->
+    <style>
+      /* only demo styles */
+      body {
+        font-family: Arial;
+      }
+
+      /* end only demo styles */
+      .checkbox-custom, 
+      .radio-custom {
+          opacity: 0;
+          position: absolute;   
+      }
+
+      .checkbox-custom, 
+      .checkbox-custom-label, 
+      .radio-custom, 
+      .radio-custom-label {
+          display: inline-block;
+          vertical-align: middle;
+          margin: 5px;
+          cursor: pointer;
+      }
+
+      .checkbox-custom-label, 
+      .radio-custom-label {
+          position: relative;
+      }
+
+      .checkbox-custom + .checkbox-custom-label:before, 
+      .radio-custom + .radio-custom-label:before {
+          content: '';
+          background: #fff;
+          border: 2px solid #ddd;
+          display: inline-block;
+          vertical-align: middle;
+          width: 20px;
+          height: 20px;
+          padding: 2px;
+          margin-right: 10px;
+          text-align: center;
+      }
+
+      .checkbox-custom:checked + .checkbox-custom-label:before {
+          background: rebeccapurple;
+          box-shadow: inset 0px 0px 0px 4px #fff;
+      }
+
+      .radio-custom + .radio-custom-label:before {
+          border-radius: 50%;
+      }
+
+      .radio-custom:checked + .radio-custom-label:before {
+          background: #ccc;
+          box-shadow: inset 0px 0px 0px 4px #fff;
+      }
+      .checkbox-custom:focus + .checkbox-custom-label, 
+      .radio-custom:focus + .radio-custom-label {
+        outline: none; /* focus style */
+      }
+    </style>
+    <script type="text/javascript" src="js/ie.js"></script>
+  </head>
+
+  <body>
+
+        <form>
+        <h2>CSS Radio Buttons and checkboxes: Border</h2>
+        <h5>Checkboxes and radio buttons with a border checked state: Pure CSS</h5>
+        <p><em>Uses an inset box shadow for the bordered effect on the checked state.</em></p>
+        <br>
+        <h2>Radio Buttons</h2>
+        <div>
+            <input id="radio-1" class="radio-custom" name="radio-group" type="radio" checked>
+            <label for="radio-1" class="radio-custom-label">First Choice</label>
+        </div>
+        <div>
+            <input id="radio-2" class="radio-custom"name="radio-group" type="radio">
+            <label for="radio-2" class="radio-custom-label">Second Choice</label>
+        </div>
+        <div>
+            <input id="radio-3" class="radio-custom" name="radio-group" type="radio">
+            <label for="radio-3" class="radio-custom-label">Third Choice</label>
+        </div>
+
+      <h2>Checkboxes</h2>
+      <div>
+        <input id="checkbox-1" class="checkbox-custom" name="checkbox-1" type="checkbox" checked>
+        <label for="checkbox-1" class="checkbox-custom-label">First Choice</label>
+      </div>
+      <div>
+        <input id="checkbox-2" class="checkbox-custom" name="checkbox-2" type="checkbox">
+        <label for="checkbox-2" class="checkbox-custom-label">Second Choice</label>
+      </div>
+      <div>
+        <input id="checkbox-3" class="checkbox-custom" name="checkbox-3" type="checkbox">
+        <label for="checkbox-3"class="checkbox-custom-label">Third Choice</label>    
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
