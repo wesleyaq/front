@@ -1,0 +1,77 @@
+//
+// Fonts Icons
+
+@font-face {
+    font-family: $font-family-icons;
+    src: url('../fonts/bootstrap/icomoon.eot');
+    src: url('../fonts/bootstrap/icomoon.eot?#iefix') format('embedded-opentype'),
+		     url('../fonts/bootstrap/icomoon.woff') format('woff'),
+		     url('../fonts/bootstrap/icomoon.ttf') format('truetype'),
+		     url('../fonts/bootstrap/icomoon.svg#iconregular') format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+.icon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: $font-family-icons;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-up:before {
+  content: "\e900";
+}
+.icon-arrow-right:before {
+  content: "\e901";
+}
+.icon-arrow-left:before {
+  content: "\e902";
+}
+.icon-arrow-down:before {
+  content: "\e903";
+}
+.icon-location:before {
+  content: "\e904";
+}
+.icon-phone:before {
+  content: "\e905";
+}
+.icon-user:before {
+  content: "\e004";
+}
+.icon-lens:before {
+  content: "\e028";
+}
+.icon-show-lines:before {
+  content: "\e159";
+}
+.icon-shopping-cart:before {
+  content: "\e203";
+}
+.icon-shopping-cart-in:before {
+  content: "\e210";
+}
+.icon-shopping-bag:before {
+  content: "\e351";
+}
+.icon-more:before {
+  content: "\ea0a";
+}
+.icon-minus:before {
+  content: "\ea0b";
+}
+.icon-facebook:before {
+  content: "\ea90";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+.icon-youtube:before {
+  content: "\ea9d";
+}

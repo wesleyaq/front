@@ -1,0 +1,907 @@
+
+/**
+ * Box search
+ * By: wesleyaltamiranda@gmail.com
+ */
+.box-search {
+	position: relative;
+	@include media(xs) {
+		position: absolute;
+		width: 100%;
+		left: 0;
+		right: 0;
+		padding: 10px;
+		background: #FFF;
+		z-index: 100;
+	}
+	::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		font-family: $font-family-muli;
+		font-size: $font-size-third;
+	  color: $font-color-placeholder;
+	  font-style: italic;
+	}
+	::-moz-placeholder { /* Firefox 19+ */
+		font-family: $font-family-muli;
+		font-size: $font-size-third;
+	  color: $font-color-placeholder;
+	  font-style: italic;
+	}
+	:-ms-input-placeholder { /* IE 10+ */
+		font-family: $font-family-muli;
+		font-size: $font-size-third;
+	  color: $font-color-placeholder;
+	  font-style: italic;
+	}
+	:-moz-placeholder { /* Firefox 18- */
+		font-family: $font-family-muli;
+		font-size: $font-size-third;
+	  color: $font-color-placeholder;
+	  font-style: italic;
+	}
+  .input-text {
+  	display: block;
+		width: 100%;
+		height: 40px;
+		padding-left: 195px;
+		padding-right: 55px;
+		background: $color-primary;
+		font-size: 16px;
+		color: $color-default;
+  }
+  button {
+  	display: inline-block;
+  	position: absolute;
+  	height: 40px;
+  	right: 0;
+  	margin-top: -1px;
+  	padding: 0 13px 0 15px;
+  	background: none;
+  	border: none;
+  	font-size: 18px;
+		color: #C9C9C9;
+		outline: none;
+		line-height: 46px;
+		@include media(xs) {
+			margin-top: 10px;
+			margin-right: 10px;
+		}
+		// &:hover {
+		// 	color: $color-primary;
+		// 	background: $color-button-primary-hover;
+		// }
+  }
+  .select-search {
+  	position: absolute;
+  	width: 183px;
+  	height: 40px;
+  	left: 0;
+  	padding-left: 11px;
+  	background: #EEEEEE;
+  	font-size: $font-size-third;
+  	color: $font-color-default;
+  	border: none;
+  	outline: none;
+  	border-radius: 3px 0 0 3px;
+  }
+}
+
+.box-search-result {
+	position: absolute;
+	margin-top: -1px;
+	padding: 0 15px 10px;
+	box-shadow: 1px 3px 6px -1px #666;
+	border: 1px solid #B9B9B9;
+	left: 15px;
+	right: 15px;
+	background: $color-primary;
+	font-family: $font-family-muli;
+	z-index: 10;
+	@include media(md) {
+		margin-left: -15px;
+    margin-right: -15px;
+	}
+	@include media(sm) {
+		width: 609px; //Add
+    padding-top: 0;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  @include media(xs) {
+  	left: 0;
+    right: 0;
+  	margin-top: 55px;
+  	border: none;
+  	box-shadow: none;
+  }
+	.category-wrapper {
+		display: inline-block;
+		padding: 10px 0 0;
+		@include media(xs) {
+			display: none;
+		}
+		.url-categoria {
+			display: block;
+			font-family: $font-family-muli;
+			font-size: $font-size-primary;
+			color: $color-secundary;
+			text-decoration: underline;
+			text-transform: uppercase;
+		}
+	}
+	.image-link {
+		display: inline-block;
+		float: left;
+		width: 12%;
+		@media screen and (max-width: $breakpoint-sm) {
+	    width: 23%;
+	  }
+	  @include media(xs) {
+	    width: 18%;
+	  }
+		img {
+			width: 100%;
+    	height: auto;
+		}
+	}
+	.name,
+	.price {
+		display: inline-block;
+		float: left;
+		line-height: 1.3;
+	}
+	.name {
+		width: 68%;
+		font-size: $font-size-secundary;
+		color: #545454;
+		text-decoration: underline;
+		@media screen and (max-width: $breakpoint-sm) {
+			width: 100%;
+	    font-size: $font-size-secundary - 4;
+	  }
+	  @include media(xs) {
+	  	font-size: $font-size-secundary - 6;
+	  }
+	}
+	.price {
+		width: 28%;
+		font-family: $font-family-muli;
+		font-size: $font-size-primary;
+		color: $color-secundary;
+		text-align: center;
+		em {
+			font-style: normal;
+		}
+	}
+	.content {
+		display: inline-block;
+		float: left;
+		width: 67%;
+		padding-top: 7px;
+		@media screen and (max-width: $breakpoint-sm) {
+	    width: 50%;
+	    padding-top: 0;
+	    padding-right: 5px;
+	  }
+	  @include media(xs) {
+	  	width: 44%;
+	  }
+	  @media screen and (min-height: 530px) and (max-width: $breakpoint-xs) {
+	  	padding-top: 5px;
+	  }
+	  .price {
+	  	@media screen and (max-width: $breakpoint-sm) {
+	  		display: none;
+	  	}
+	  }
+	}
+	.buy {
+		display: inline-block;
+		float: left;
+		width: 20%;
+		padding-top: 10px;
+		text-align: center;
+		@media screen and (max-width: $breakpoint-sm) {
+			width: 27%;
+	    padding-top: 0;
+	  }
+	  @include media(xs) {
+	  	width: 38%;
+	  	text-align: right;
+	  }
+	  .price {
+	  	display: none;
+	  	@media screen and (max-width: $breakpoint-sm) {
+	  		display: block;
+	  		float: none;
+	  		width: 100%;
+	  		font-size: $font-size-primary - 2;
+	  		text-align: right;
+	  	}
+			@include media(xs) {
+				float: right;
+				font-size: $font-size-primary;
+			}
+	  }
+		.buy-button-normal {
+			> a {
+				font-size: 0;
+				vertical-align: middle;
+				padding-left: 18%;
+				padding-right: 43px;
+				@media screen and (max-width: $breakpoint-lg) {
+					padding-left: 15%;
+					padding-right: 35px;
+				}
+				&:before {
+					display: inline-block;
+					margin-top: 1px;
+					content: 'AGREGAR';
+					font-size: 13px;
+					text-transform: uppercase;
+				}
+				&:after {
+					display: inline-block;
+					position: absolute;
+					right: 11px;
+					font-family: $font-family-icons;
+					font-size: 17px;
+					line-height: 1;
+					content: '\E203';
+    			vertical-align: top;
+    			@include rotate-mirror();
+				  @media screen and (max-width: $breakpoint-lg) {
+				    right: 8px;
+				  }
+				}
+			}
+		}
+	}
+	.item {
+		padding: 5px 0;
+		border-top: 1px solid #CECECE;
+		@include clearfix();
+		@include media(xs) {
+			padding: 5px 0 10px;
+		}
+		@media screen and (min-height: 530px) and (max-width: $breakpoint-xs) {
+			padding: 15px 0 20px;
+		}
+		& > *:first-child {
+			padding-left: 0px;
+			padding-right: 15px;
+			@include media(xs) {
+				padding-right: 5px;
+			}
+		}
+	}
+	li{
+		&:first-child {
+			.item {
+				border-top: none;
+			}
+		}
+		.category-wrapper {
+			display: none;
+		}
+	}
+}
+
+/**
+ * Button Header User
+ * By: wesleyaltamiranda@gmail.com
+ */
+.btn-user {
+	position: relative;
+	width: 100%;
+	height: 70px;
+	padding: 14px 0;
+	cursor: pointer;
+	@include media (md) {
+		padding-left: 5px;
+	}
+	@include media (sm) {
+		padding-left: 5px;
+	}
+	i {
+		display: inline-block;
+		width: 35px;
+	  height: 35px;
+		color: $bg-color-primary;
+		&.icon-user {
+			margin-top: 0;
+			padding: 11px 0 0 10px;
+			border-radius: 100%;
+			font-size: 24px;
+		}
+	}
+	.text {
+		display: block;
+		font-size: $font-size-button;
+		line-height: 1;
+	}
+	.text-name {
+		display: block;
+		font-size: $font-size-third;
+		color: $color-default;
+	}
+	.btn-link {
+		display: inline-block;
+		padding: 0;
+		line-height: 1;
+		text-decoration: underline;
+		vertical-align: top;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	.content {
+		margin-left: 39px;
+	}
+	.welcome {
+		margin: 0;
+		display: block;
+	  font-size: $font-size-button;
+	  color: #000;
+	  line-height: 1.3;
+	  letter-spacing: normal;
+		em {
+			font-style: normal;
+		}
+		a {
+			display: block;
+			font-size: $font-size-button;
+			color: $font-color-primary;
+			line-height: 1.3;
+		}
+		#login {
+			display: inline-block;
+			margin-top: 10px;
+			padding-right: 19px;
+			position: relative;
+			color: $font-color-primary;
+			text-decoration: underline;
+			&:after {
+				position: absolute;
+		    right: 0;
+				font-family: $font-family-icons;
+				content: '\e903';
+				font-size: 20px;
+				line-height: .9;
+				color: $font-color-fifth;
+				// @include rotate(90deg);
+			}
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+	&.active {
+		border: 1px solid #CECECE;
+		border-top: none;
+		z-index: 100;
+		&:after {
+			color: $color-button-default;
+			@include rotate(270deg);
+		}
+		i {
+			color: $color-button-default;
+			&.icon {
+				border: 2px solid $color-button-default;
+			}
+		}
+		.btn-link {
+			text-decoration: none
+		}
+	}
+	.link-arrow {
+		top: -3px;
+	}
+}
+
+.btn-location {
+	position: relative;
+	width: 100%;
+	height: 70px;
+	padding: 14px 0;
+	cursor: pointer;
+	i {
+		display: inline-block;
+		width: 35px;
+	  height: 35px;
+		color: $bg-color-primary;
+		&.icon-location {
+			width: 28px;
+			margin-top: 0;
+			margin-left: -8px;
+			padding: 3px 2px;
+			border-radius: 100%;
+			font-size: 33px;
+		}
+	}
+	.text {
+		display: block;
+		font-size: $font-size-button;
+		line-height: .8;
+	}
+	.content {
+		margin-left: 28px;
+	}
+	.link-arrow {
+		top: -3px;
+	}
+}
+
+/**
+ * Header User
+ * By: wesleyaltamiranda@gmail.com
+ */
+.box-user {
+	position: absolute;
+	width: 100%;
+	top: 53px;
+	padding: 5px 15px;
+	background: $color-primary;
+	border: 1px solid #CECECE;
+	z-index: 100;
+	@include media (xs) {
+		top: 0;
+		padding-bottom: 30px;
+	}
+	a {
+		display: block;
+		padding: 14px 5px;
+		color: $color-default;
+		text-decoration: none !important;
+		text-align: right;
+		border-top: 1px solid #CECECE;
+		&:first-child {
+			border-top: none;
+		}
+		i {
+			display: inline-block;
+			width: 25px;
+			height: 15px;
+			text-align: right;
+			font-size: 18px;
+			line-height: 1;
+			&:before {
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+		}
+		.icon-remove-2 {
+			font-size: 14px;
+			&:before {
+				top: 2px;
+			}
+		}
+	}
+}
+
+/**
+ * Button Quickcart
+ * By: wesleyaltamiranda@gmail.com
+ */
+.btn-quickcart {
+	position: relative;
+	float: right;
+	height: 70px;
+	width: 100%;
+	max-width: 160px;
+	right: 0;
+	padding: 10px 0 14px 22px;
+	cursor: pointer;
+	// background: $color-primary;
+	// border-left: 6px solid transparent;
+	i {
+		display: inline-block;
+		width: 44px;
+	  height: 44px;
+		font-size: 24px;
+		color: $color-primary;
+		text-align: right;
+		&.icon-shopping-cart {
+			margin-top: 0;
+			padding: 16px 9px 10px 0;
+			@include rotate-mirror();
+			background-color: #930616; //#AB020E;
+			border-radius: 100%;
+			.ie9 & {
+				filter: none;
+			}
+		}
+	}
+	.text {
+		display: inline-block;
+		position: relative;
+		padding-right: 20px;
+		font-size: 13px;
+		color: $font-color-primary;
+		line-height: 1;
+	}
+	.text-price {
+		display: block;
+		padding-top: 3px;
+		font-family: $font-family-muli;
+		color: $color-four;
+		line-height: 1;
+	}
+	.amount-items-in-cart {
+		.title {
+			display: none;
+		}
+	}
+	.cart-info {
+		.amount-items,
+		.amount-kits {
+			display: none;
+		}
+		li {
+			font-size: 0;
+			text-indent: -9999px;
+    	strong {
+    		font-weight: normal;
+    	}
+    	em {
+    		display: block;
+    		margin-top: 5px;
+    		font-size: $font-size-sixth;
+	    	color: $font-color-primary;
+	    	line-height: 1;
+    		font-style: normal;
+    		text-indent: 0;
+    	}
+		}
+		.amount-products-em {
+			position: absolute;
+			width: 22px;
+			height: 22px;
+			top: 0;
+			left: 47px;
+			background: $font-color-fifth;
+			font-family: $font-family-vr;
+			font-size: 11px;
+			color: $font-color-secundary;
+			line-height: 24px;
+			border-radius: 100%;
+			text-align: center;
+		}
+		.total-cart-em {
+			display: block;
+			padding-top: 5px;
+			font-family: $font-family-muli;
+			font-size: $font-size-primary - 1;
+    	color: $color-fifth;
+			line-height: 1;
+		}
+	}
+	.content {
+		margin-left: 50px;
+	}
+	&.active {
+		border-color: $color-secundary;
+    cursor: default;
+    z-index: 100;
+		&:after {
+			display: none;
+		}
+		i {
+			color: $color-button-default;
+			&.icon {
+				border: 2px solid $color-button-default;
+			}
+		}
+	}
+	.link-arrow {
+		top: -4px;
+	}
+}
+
+/**
+ * Quickcart
+ * By: wesleyaltamiranda@gmail.com
+ */
+.box-quickcart {
+	position: absolute;
+	min-width: 320px !important;
+	width: 100%;
+	top: 53px;
+	right: 0;
+	padding: 10px 15px 25px;
+	background: $color-primary;
+	z-index: 100;
+	@include media (xs) {
+		width: 500%;
+		top: 0;
+		padding-bottom: 30px;
+	}
+	.btn-link {
+		padding: 0;
+	}
+	.amount-items-in-cart {
+		.title,
+		.amount-items,
+		.amount-kits {
+			display: none;
+		}
+		strong,
+		em {
+				display: block;
+		}
+		span {
+			display: block;
+			font-size: 0;
+			font-weight: normal;
+			text-indent: -9999px;
+			&:before {
+				display: block;
+				content: "Estas comprando:";
+				font-size: $font-size-button;
+				text-indent: 0;
+				@extend .text;
+			}
+		}
+		.amount-products {
+			em {
+				font-family: $font-family-muli;
+				font-size: $font-size-primary;
+				color: $color-default;
+				font-style: normal;
+				font-weight: normal;
+				&:after {
+					padding-left: 5px;
+					content: "productos";
+				}
+			}
+		}
+		.total-cart {
+			span {
+				&:before {
+					content: "Total";
+				}
+			}
+			em {
+				font-family: $font-family-muli;
+				font-size: 24px;
+				color: $color-secundary;
+				font-style: normal;
+				// @include media (xs) {
+				// 	font-size: $font-size-third;
+				// }
+				// &:before {
+				// 	padding-right: 5px;
+				// 	content: "S/";
+				// }
+			}
+		}
+		li {
+			float: left;
+			width: 50%;
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+	}
+	.text-price {
+		display: block;
+		font-family: $font-family-muli;
+		font-size: 24px;
+		@include media (xs) {
+			font-size: $font-size-third;
+		}
+	}
+	.text-buy {
+		display: block;
+		font-family: $font-family-muli;
+		font-size: $font-size-primary;
+		color: $color-default;
+	}
+	.btn-link {
+		@include media(xs) {
+			display: none;
+		}
+		.icon-chevron-left {
+			top: 2px;
+			margin-left: 5px;
+			@include rotate(90deg);
+			&:before {
+				line-height: 1;
+			}
+		}
+	}
+	.list,
+	.portal-minicart-ref {
+		max-height: 292px;
+		overflow-x: auto;
+		@include media(xs) {
+			max-height: 243px;
+		}
+		.vtexsc-cart {
+			display: block !important;
+			height: auto !important;
+		}
+		.vtexsc-productList {
+			border-spacing: 0;
+			thead {
+				display: none;
+			}
+			tr {
+				position: relative;
+				display: inline-flex;
+    		width: 100%;
+			}
+			td {
+				padding: 2px 0;
+				border-bottom: 1px solid #CDCDCD;
+			}
+			.cartSkuImage {
+				width: 54px;
+				@include media(xs) {
+					width: 20%;
+				}
+			}
+			.cartSkuName {
+				width: 136px;
+				padding-right: 15px;
+				@include media(xs) {
+					width: 45%;
+				}
+				h4 {
+					margin: 0;
+					padding-top: 3px;
+					font-family: $font-family-muli;
+					font-size: $font-size-button;
+    			color: $font-color-primary;
+    			a {
+    				color: $font-color-primary;
+    				text-decoration: underline;
+    				line-height: 1;
+    			}
+				}
+				p {
+					padding-top: 3px;
+					font-size: 12px;
+					line-height: 1;
+				}
+				.availability {
+					visibility: hidden;
+					font-size: 0;
+				}
+			}
+			.cartSkuPrice {
+				width: 55px;
+				vertical-align: top;
+				@include media(xs) {
+					width: 20%;
+				}
+				.bestPrice {
+					display: inline-block;
+					height: 18px;
+					overflow: hidden;
+					font-family: $font-family-muli;
+					font-size: $font-size-sixth;
+					line-height: 2;
+					color: $color-secundary;
+				}
+			}
+			.cartSkuQuantity {
+				position: relative;
+				width: 0;
+				margin: 0;
+				padding: 0;
+				border-bottom: none;
+				.vtexsc-skuQtt {
+					font-size: $font-size-sixth;
+    			color: $font-color-primary;
+    			&:before {
+    				content: 'x';
+    			}
+				}
+				.cartSkuQtt {
+					position: absolute;
+					top: 18px;
+					left: -55px;
+					@media screen and (max-width: $breakpoint-sm) {
+			    	left: -80px;
+			  	}
+			  	@media screen and (max-width: 425px) {
+						left: -75px;
+					}
+					@media screen and (max-width: 385px) {
+						left: -68px;
+					}
+					@media screen and (max-width: 360px) {
+						left: -65px;
+					}
+					@media screen and (max-width: 345px) {
+						left: -63px;
+					}
+					@media screen and (max-width: 330px) {
+						left: -58px;
+					}
+				}
+			}
+			.cartSkuActions {
+    		width: 25px;
+    		left: 40px;
+				vertical-align:top;
+				text-align: center;
+				@include media(xs) {
+					width: 10%;
+				}
+				.cartSkuRemove {
+					a {
+						display: block !important;
+						padding-top: 3px;
+						background: none;
+				    border: none;
+				    font-size: 0;
+				    visibility: hidden;
+				    outline: none;
+						&:before {
+							display: inline-block;
+							position: relative;
+  						top: 1px;
+							font-family: $font-family-icons;
+							font-size: 11px;
+							color: #CDCDCD;
+							visibility: visible;
+							content: "\E208";
+						}
+					}
+				}
+			}
+			.sku-imagem {
+				img {
+					width: 40px;
+					height: 40px;
+					margin-top: 5px;
+				}
+			}
+		}
+		.cartFooter {
+			display: none;
+		}
+		.vtexsc-center {
+			@include media(xs) {
+				max-width: 400px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+	.portal-minicart-ref {
+		margin-top: 10px;
+	}
+}
+.progressbar {
+	background: #F5F5F5;
+	.val {
+		height: 4px;
+		background: $color-secundary;
+		border-radius: 5px;
+	}
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #000;
+	opacity: .5;
+	z-index: 99;
+}
+.overlay-disabled {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	cursor: default;
+}

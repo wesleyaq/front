@@ -1,0 +1,1043 @@
+/* ===========
+ * Project: Template
+ * Start Date: 2016-09-26
+ * By: wesleyaltamiranda@gmail.com
+ * ======== */
+
+// Core variables and mixins
+@import "inc/variables";
+@import "inc/mixins";
+@import 'inc/sprite';
+@include sprites($spritesheet-sprites);
+
+// Libs
+@import "libs/bootstrap";
+@import "libs/bootstrap-select";
+@import "libs/slick-slider";
+
+/*
+ * Global Style
+ */
+
+// Debug line red
+/* [class^="col-"] {
+  outline: 1px solid red;
+} */
+
+html {
+	font-size: 16px;
+  position: relative;
+  min-height: 100%;
+}
+
+a,
+a:active,
+a:visited{
+	border: none;
+	outline: none;
+}
+
+body {
+	padding-top: 0 !important;
+	font-family: $font-family-muli;
+}
+
+/**
+ * Custom Grid Header
+ * By: wesleyaltamiranda@gmail.com
+ */
+.col-hd-2,
+.col-hd-3,
+.col-hd-5 {
+	float: left;
+}
+.col-hd-2 {
+	width: 13.5%;
+}
+.col-hd-3 {
+	width: 33%;
+}
+.col-hd-5 {
+	width: 53.2%;
+}
+
+/**
+ * Custom Grid Footer
+ * By: wesleyaltamiranda@gmail.com
+ */
+.col-ft-1,
+.col-ft-2,
+.col-ft-3 {
+	float: left;
+}
+.col-ft-1 {
+	width: 19.2%;
+}
+.col-ft-2 {
+	width: 22.2%;
+}
+.col-ft-3 {
+	width: 25%;
+}
+.col-ft-offset-1 {
+	margin-left: 7.8%;
+}
+
+/**
+ * Input Text
+ * By: wesleyaltamiranda@gmail.com
+ */
+.input-text {
+	display: inline-block;
+	height: 42px;
+	padding: 0 15px;
+	border-radius: 3px;
+	border: none;
+	background: $input-text-bg;
+	font-family: $input-text-font-family;
+	font-size: $input-text-font-size;
+	color: $input-text-color;
+	line-height: 1;
+	outline: none;
+	box-shadow: none;
+	&.error {
+		color: #EA6F6F;
+		border-color: $input-text-border-error;
+	}
+}
+
+input[type="checkbox"] {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	border: 1px solid #CECECE;
+	border-radius: 0;
+}
+
+input {
+	&.error {
+		color: #EA6F6F;
+		border-color: $input-text-border-error !important;
+	}
+}
+
+/**
+ * Buttons
+ * By: wesleyaltamiranda@gmail.com
+ */
+.btn-primary {
+	display: inline-block;
+	position:relative;
+	padding: 12px 20px;
+	background: $color-button-primary;
+	border-radius: 4px;
+	font-family: $font-family-muli;
+	color: $bg-color-primary !important;
+	text-decoration: none !important;
+	text-align: center;
+	text-transform: none;
+	text-shadow: none !important;
+	border: none;
+	overflow:hidden;
+  transition: all 0.2s ease;
+	&:hover,
+	&:focus {
+		background: $color-button-primary-hover;
+		outline: none;
+	}
+	&:disabled,
+	&.disabled {
+		border: $color-button-disabled !important;
+		background: $color-button-disabled !important;
+		cursor: default;
+	}
+}
+
+.btn-large {
+	font-size: 20px;
+}
+
+.buy-button-normal > a {
+	padding: 4px 20px;
+	font-size: $font-size-button;
+}
+
+.btn-default,
+.box-client-info .box-client-info-pj a {
+	position: relative;
+	padding: 11px 10px;
+	border-radius: 2px;
+	border: 1px solid #a70136;
+	background: $color-button-default;
+	font-size: $font-size-secundary;
+	color: $color-primary !important;
+	line-height: 1;
+	text-decoration: none;
+	outline: none;
+	overflow: hidden;
+	outline: none;
+	&:hover {
+		background: $color-button-default-hover;
+		border-color: transparent;
+	}
+}
+
+.btn-link {
+	padding: 0;
+}
+
+.link-arrow {
+	display: inline-block;
+	position: relative;
+	padding-right: 20px;
+	font-size: 13px;
+	color: $font-color-primary;
+	line-height: 1;
+	text-decoration: underline;
+	&:hover {
+		color: $font-color-primary;
+		text-decoration: none;
+	}
+	&:after {
+		position: absolute;
+		right: 0;
+		font-family: $font-family-icons;
+		font-size: 20px;
+		line-height: .7;
+		content: '\e903';
+		color: $font-color-fifth;
+		// @include rotate(90deg);
+	}
+}
+
+/**
+ * Texts
+ * By: wesleyaltamiranda@gmail.com
+ */
+.text {
+	font-size: $font-size-button;
+	color: $font-color-primary;
+	&.-small {
+		font-size: $font-size-sixth;
+	}
+	&.-medium {
+		font-size: $font-size-secundary;
+	}
+	&.-large {
+		font-size: $font-size-primary;
+	}
+}
+
+.text-price {
+	font-size: $font-size-third;
+	color: $color-secundary;
+}
+
+.text-xs {
+	font-size: 12px;
+}
+
+.text-location {
+	font-size: $font-size-third;
+	color: $color-default !important;
+	strong {
+		font-family: $font-family-muli;
+	}
+	.icon-chevron-right {
+		top: -1px;
+		padding-left: 5px;
+		@include rotate(90deg);
+	}
+	& a {
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.text-simple {
+	font-size: 15px;
+	@media screen and (max-width: $breakpoint-sm) {
+		font-size: $font-size-sixth;
+		line-height: 1.3;
+	}
+}
+
+span {
+	&.error {
+	  display: block;
+	  width: auto !important;
+	  margin-top: 5px;
+	  padding: 0;
+	  font-size: $text-font-size-error;
+	  line-height: 1.2;
+	  color: $text-color-error;
+	}
+}
+
+.flex-movil {
+	@media screen and (max-width: $breakpoint-sm) {
+		display: flex;
+		flex-flow: row wrap;
+	}
+}
+
+.only-xs {
+	display: none !important;
+	@include media(xs) {
+		display: inline-block !important;
+	}
+}
+
+@for $i from 5 through 60 {
+  .-mt#{$i} {
+      margin-top: #{$i}px;
+  }
+  .-mb#{$i} {
+      margin-bottom: #{$i}px;
+  }
+  .-ml#{$i} {
+      margin-left: #{$i}px;
+  }
+  .-pt#{$i} {
+      padding-top: #{$i}px;
+  }
+}
+
+.alert-success {
+	color: #566500 !important;
+  background-color: #D3E183 !important;
+  h4 {
+    color: #566500 !important;
+	}
+}
+
+h1 {
+	margin-top: 0;
+  font-family: $font-family-muli;
+  font-size: $font-size-default;
+  font-weight: normal;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+h2 {
+	margin-top: 0;
+	font-family: $font-family-muli;
+	font-size: $font-size-primary;
+	font-weight: normal;
+	line-height: 1;
+	@include media (xs){
+		font-size: 16px;
+	}
+}
+
+h3 {
+	margin-top: 0;
+	font-family: $font-family-muli;
+	font-size: $font-size-secundary;
+	font-weight: normal;
+	line-height: 1.2;
+	text-transform: none;
+}
+
+h4 {
+	margin-top: 0;
+	font-family: $font-family-muli;
+	font-size: $font-size-third;
+	font-weight: normal;
+	line-height: 1.2;
+	text-transform: none;
+}
+
+p {
+	font-family: $font-family-muli;
+	font-size: $font-size-third;
+	font-weight: normal;
+	line-height: 1.2;
+	text-transform: none;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.no-gutter {
+  padding-left: 0!important;
+  padding-right: 0!important;
+}
+.no-gutter-left {
+  padding-left: 0!important;
+}
+.no-gutter-right {
+  padding-right: 0!important;
+}
+@include media(sm) {
+	.-no-gutter-sm {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+@include media(xs) {
+	.-no-gutter-xs {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.no-gutter-left-xs {
+	  padding-right: 0!important;
+	}
+	.no-gutter-right-xs {
+	  padding-right: 0!important;
+	}
+}
+
+/* COLOR CLASS */
+.txt-green{
+	color: $color-secundary;
+}
+.txt-gray{
+	color: $color-third;
+}
+.txt-black{
+	color: $color-default;
+}
+
+/* FONTS STYLE */
+.font-italic{
+	font-family: $font-family-muli;
+	font-style: italic;
+}
+.font-bold{
+	font-family: $font-family-muli;
+	font-weight: bold;
+}
+.font-bold-italic{
+	font-family: $font-family-muli;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.txt-upper{
+	text-transform: uppercase;
+}
+
+.modal-open {
+	overflow: hidden;
+}
+
+.visible{
+	visibility: visible !important;
+}
+
+/*
+* Slider Principal Home
+* By: wesleyaltamiranda@gmail.com
+*/
+.slider-primary{
+	position: relative;
+	height: 375px;
+	z-index: 0;
+	visibility: hidden;
+
+	&.slick-initialized{
+		visibility: visible;
+	}
+
+	/* Arrows */
+	.slider-arrow{
+		cursor: pointer;
+		position: absolute;
+		top: 162px;
+		z-index: 9;
+
+		&:hover{
+			opacity: .7;
+		}
+
+		&.slick-disabled{
+			opacity: .5;
+		}
+	}
+
+	.icon-slider-arrow-left{
+		left: 39px;
+	}
+
+	.icon-slider-arrow-right{
+		right: 39px;
+	}
+
+	/* Dots */
+	.slick-dots{
+		position: absolute;
+		bottom: 36px;
+		right: 103px;
+
+		li{
+			display: inline-block;
+			.icon-slider-dot{
+				cursor: pointer;
+				display: block;
+			}
+		}
+
+		li.slick-active{
+			.icon-slider-dot{
+				// @include sprite($icon-slider-dot-active);
+			}
+		}
+
+		@include media (sm){
+			right: 86px;
+		}
+		@include media (xs){
+			position: relative;
+			bottom: 0;
+			right: 0;
+			@include block-center();
+		}
+	}
+
+	/* Banners (vtex) */
+	.box-banner{
+		position: relative;
+
+		a:hover{
+			text-decoration: none;
+		}
+
+		// Caption
+		.slider-caption{
+			background:rgb(0,0,0);
+			background: transparent\9; /* IE9 hack */
+			background:rgba(0,0,0,0.7);
+			border: 3px solid $color-primary;
+			bottom: 63px;
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#b2000000,endColorstr=#b2000000); /* IE */
+			height: 251px;
+			left: 56%;
+			max-height: 251px;
+			padding: 0 30px;
+			position: absolute;
+			text-align: center;
+			width: 37%;
+
+			@include media (md){
+				left: 41%;
+				width: 50%;
+			}
+
+			@include media (sm){
+				left: 20%;
+				width: 70%;
+			}
+
+			@include media (xs){
+				bottom: 10%;
+				height: 125px;
+				left: 26%;
+				padding:0 20px;
+				width: 70%;
+			}
+
+			h3,
+			h4,
+			p{
+				color: $color-primary;
+				margin: 0;
+			}
+
+			h3,
+			h4{
+				font-family: $font-family-muli;
+				text-transform: uppercase;
+			}
+
+			h3{
+				font-size: 32px;
+				margin: 15px 0;
+				@include media (xs){
+					font-size: 18px;
+					margin: 5px 0;
+				}
+			}
+
+			h4{
+				border-bottom: 1px solid $color-primary;
+				filter: alpha(opacity=80); /* IE */
+				opacity: 0.8;
+				letter-spacing: 2px;
+				margin: 10px auto 0 auto;
+				padding-bottom: 2px;
+				width: 90px;
+
+				@include media (xs){
+					border: none;
+					font-size: 11px;
+					letter-spacing: 1px;
+				}
+			}
+
+			p{
+				font-size: 18px;
+				line-height: 18px;
+				margin-bottom: 35px;
+
+				@include media (xs){
+					display: none;
+				}
+			}
+
+			a.btn{
+				font-size: 16px;
+				letter-spacing: 1.5px;
+				position: relative;
+				width: 60%;
+
+				@include media (xs){
+					font-size: 12px;
+					width: 100%;
+				}
+
+				span.arrow{
+					font-size: 12px;
+					font-weight: normal;
+					position: absolute;
+					right: 10px;
+					top: 13px;
+					@include media (xs){
+						right: 7px;
+						top: 11px;
+					}
+				}
+			}
+		}
+
+		img{
+			height: 375px;
+			width: 100%;
+
+			@include media (xs){
+				height: 180px;
+			}
+		}
+	}
+
+	@include media (xs){
+		height: 180px;
+	}
+}
+
+@import "partials/header";
+@import "partials/footer";
+
+/**
+ * Menú Principal
+ * By: wesleyaltamiranda@gmail.com
+ */
+.menu-products {
+	display: inline-block;
+	position: relative;
+	width: 272px;
+	@include media (md) {
+		width: 240px;
+	}
+	@include media (sm) {
+		width: 205px;
+	}
+	@include media (xs) {
+		position: absolute;
+		width: 100%;
+		left: 0;
+    right: 0;
+    margin-top: -1px;
+    z-index: 100;
+	}
+	> a {
+		display: block;
+		width: 100%;
+		height: 44px;
+		padding: 10px 10px 0 10px;
+		background: #7A1010; //#8F0707
+		font-size: $font-size-secundary;
+		color: $font-color-fifth;
+		text-decoration: none !important;
+		// @include media (sm) {
+		// 	padding-left: 25px;
+		// 	font-size: $font-size-third;
+		// }
+		// @include media (xs) {
+		// 	display: none;
+		// }
+		i {
+			float: left;
+			margin-top: 2px;
+			padding-right: 13px;
+			font-size: 21px;
+			line-height: 1;
+			// @include rotate(90deg);
+		}
+	}
+}
+
+.menu-products-content {
+	display: none;
+	position: absolute;
+	height: 497px;
+	width: 100%;
+	padding: 10px 0;
+	left: 0;
+	background: $color-primary;
+	@media screen and (max-width: $breakpoint-md) {
+		padding-top: 5px;
+		height: auto;
+	}
+	@include media (sm) {
+		width: 720px;
+	}
+	.btn-menu-main {
+		display: block;
+		padding: 10px 12px;
+		font-size: $font-size-sixth;
+		color: $font-color-primary;
+		text-decoration: none;
+		i {
+			margin-right: 5px;
+			color: #CDCDCD;
+		}
+	}
+	> ul {
+		&.-mt10 {
+			margin-top: 12px;
+		}
+		> li {
+			> a {
+				display: block;
+				position: relative;
+				font-size: 15px;
+				color: #545454;
+				padding: 11px 28px 11px 20px;
+				border-left: 8px solid transparent;
+				text-decoration: none !important;
+				line-height: 1;
+				@include media (md) {
+					padding-left: 15px;
+					font-size: 13px;
+				}
+				i {
+					float: right;
+					position: absolute;
+			    right: 11px;
+			    top: 50%;
+			    margin-top: -8px;
+					color: #DADADA;
+				}
+				&.active {
+					border-color: $color-default;
+					background: #EBEBEB;
+					color: $color-default;
+					font-weight: bold;
+					i {
+						color: $color-default;
+						@include media (xs) {
+							@include rotate(90deg);
+						}
+					}
+					~ .submenu-content {
+						display: block;
+					}
+				}
+				&.subitem {
+					border-color: transparent;
+					.icon {
+						padding-top: 1px;
+						left: 3px;
+						right: auto;
+						margin-top: -7px;
+						@include rotate(180deg);
+					}
+				}
+			}
+			&.dest {
+				> a {
+					position: relative;
+					font-family: $font-family-muli;
+					text-align: left;
+					border-color: transparent !important;
+					&:before {
+						display: block;
+						position: absolute;
+						left: 0;
+						top: 0;
+						height: 36px;
+						content: "";
+						// @extend .icon-tape-botton;
+						border-top: 6px solid #99B300;
+					}
+				}
+			}
+		}
+	}
+	.submenu-content {
+		display: none;
+		position: absolute;
+		width: 1016px;
+		height: 497px;
+		top: 0;
+		left: 284px;
+		padding: 15px 30px;
+		background: $bg-color-default;
+		border-left: 1px solid #C1C1C1;
+		@media screen and (max-width: $breakpoint-lg) {
+		  width: 965px;
+		  left: 204px;
+		}
+		@include media (md) {
+			width: 700px;
+			left: 239px;
+		}
+		@media screen and (max-width: $breakpoint-md) {
+			position: relative;
+	    left: auto;
+	    top: auto;
+	    width: auto;
+	    height: auto;
+	    padding: 0;
+		}
+		ul {
+			@media screen and (max-width: $breakpoint-md) {
+				margin: 0;
+			}
+			> li {
+				line-height: 1;
+				@media screen and (max-width: $breakpoint-md) {
+					display: none;
+				}
+				a {
+					font-size: $font-size-sixth;
+					color: $font-color-primary;
+					line-height: 1.3;
+					text-decoration: none !important;
+					// border-left: 8px solid transparent;
+					@media screen and (max-width: $breakpoint-md) {
+						display: block;
+				    padding: 10px 25px;
+				    font-size: 15px;
+				    color: $font-color-primary;
+					}
+				}
+				&.title {
+					@media screen and (max-width: $breakpoint-md) {
+						display: block;
+					}
+					a {
+						font-size: $font-size-button;
+						color: $color-fifth;
+						line-height: 1;
+						@media screen and (max-width: $breakpoint-md) {
+							display: block;
+							padding: 10px 25px;
+							font-size: $font-size-secundary - 1;
+							color: $font-color-primary;
+						}
+						&:after {
+							display: inline-block;
+							position: relative;
+  						top: 1px;
+							font-family: $font-family-icons;
+							content: "\E224";
+							margin-left: 1px;
+							font-size: 12px;
+							@media screen and (max-width: $breakpoint-md) {
+								display: none;
+							}
+						}
+					}
+					h4 {
+						margin: 0;
+					}
+				}
+				&.active {
+					a {
+						position: relative;
+						color: $color-button-primary;
+						border-color: #007137;
+						background: #F2F2F2;
+						font-weight: bold;
+						&:before {
+							display: inline-block;
+							position: relative;
+							font-family: $font-family-icons;
+							position: absolute;
+							top: 50%;
+							right: 11px;
+							margin-top: -8px;
+							content: '\E224';
+					    color: #007137;
+					    @include rotate(90deg);
+						}
+					}
+				}
+				.tooltip-product {
+					display: none !important;
+				}
+			}
+		}
+		.col {
+			float: left;
+			width: 20%;
+			@include media (md) {
+				width: 25%;
+			}
+			@media screen and (max-width: $breakpoint-md) {
+				float: none;
+				width: 100%;
+			}
+		}
+		.exclusive-offer {
+			> h2 {
+				display: none !important;
+			}
+		}
+	}
+}
+
+.box-menu-product {
+	text-align: center;
+	@media screen and (max-width: $breakpoint-md) {
+		display: none;
+	}
+	.product-field,
+	.flags-discount-hightlight{
+		display: none;
+	}
+
+	.tag-offer {
+		display: block;
+		padding: 10px;
+		font-family: $font-family-muli;
+		font-size: $font-size-primary;
+		color: $color-primary;
+		text-align: center;
+		line-height: 1;
+		background: $color-default;
+	}
+	.flag {
+		position: absolute;
+		top: 0;
+		width: 24px !important;
+		height: 24px !important;
+		margin-top: 2px;
+		z-index: 1;
+		visibility: visible;
+	}
+	.image {
+		display: inline-block;
+		position: relative;
+		margin-top: 5px;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	h3 {
+		margin: 5px 0 0;
+		font-family: $font-family-muli;
+		font-size: $font-size-primary;
+		font-weight: bold;
+		color: $color-button-primary;
+		line-height: 1;
+		text-transform: uppercase;
+		a {
+			font-family: $font-family-muli;
+			font-size: $font-size-primary !important;
+			font-weight: bold;
+			color: $color-button-primary !important;
+			line-height: 1 !important;
+			text-transform: uppercase;
+		}
+	}
+	h4 {
+		min-height: 45px;
+		margin: 2px 0 0 0;
+		font-size: $font-size-sixth;
+		color: #555555;
+		line-height: 1;
+		a {
+			color: #555555;
+		}
+	}
+	.text-price-n {
+		display: block;
+		font-size: $font-size-button;
+		color: $font-color-primary;
+		line-height: 1;
+		text-align: center;
+		text-decoration: line-through;
+		strong {
+			color: #232323;
+			font-weight: normal;
+		}
+	}
+	.text-price {
+		font-family: $font-family-muli;
+		font-size: 26px;
+		color: $color-button-primary;
+		line-height: normal;
+		small {
+			padding-left: 4px;
+			font-family: $font-family-muli;
+			font-size: $font-size-primary;
+			color: #303030;
+		}
+	}
+	.caption-product {
+		display: none !important;
+	}
+}
+
+.menu-options {
+	display: inline-block;
+	li {
+		float: left;
+		a {
+			display: inline-block;
+			height: 44px;
+			padding: 12px 13px 0 14px;
+			font-size: $font-size-third;
+			color: #FFF;
+			&:hover {
+				text-decoration: none;
+			}
+			&.active {
+				background: #630506;
+			}
+		}
+		&:first-child {
+			a {
+				padding-left: 25px;
+				padding-right: 18px;
+			}
+		}
+		&.-children {
+			> a {
+				&:after {
+					display: inline-block;
+					float: right;
+					margin: 0 0 0 3px;
+			    font-family: $font-family-icons;
+			    font-size: 20px;
+			    line-height: 1.1;
+			    content: '\e903';
+			    color: $font-color-fifth;
+				}
+			}
+		}
+		ul {
+			display: none;
+		}
+	}
+}

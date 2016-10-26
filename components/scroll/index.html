@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>Scroll JS</title>
+    
+  </head>
+  <body>
+	<div style="height:1000px;">&nbsp;</div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" >
+        (function($) {
+        	/*var didScroll = false;
+
+			window.onscroll = doThisStuffOnScroll;
+
+			function doThisStuffOnScroll() {
+			    didScroll = true;
+			    console.log('Scroll JS');
+			}
+
+			setInterval(function() {
+			    if(didScroll) {
+			        didScroll = false;
+			    }
+			}, 100);
+
+			var scrollTime = false;
+
+			function scrollFunction() {
+				console.log('Scroll JQuery');
+			}
+
+			$(window).on('load scroll', function() {
+                clearTimeout(scrollTime);
+                scrollTime = setTimeout(scrollFunction, 100);
+            });*/
+
+            var scrollFunction = function () {
+			    // do the onscroll stuff you want here
+			    console.log('Scroll JQuery');
+			};
+
+			var scrollTime = false;
+			
+			$(window).on('load scroll', function () {
+			    if (scrollTime) {
+			        return;
+			    }
+			    scrollTime = true;
+
+			    scrollFunction();
+
+			    setTimeout(function () {
+			        scrollTime = false;
+			    }, 100);
+			});
+
+        })(jQuery);
+    </script>
+  </body>
+</html>

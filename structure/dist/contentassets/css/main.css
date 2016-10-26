@@ -1,0 +1,864 @@
+/* ===========
+ * Project: Template
+ * Start Date: 2016-09-26
+ * By: wesleyaltamiranda@gmail.com
+ * ======== */
+/**
+* Breakpoints
+*/
+/**
+ * Colors
+ */
+/**
+ * Buttons
+ */
+/**
+ * Font
+ */
+/**
+ * Sizes
+ */
+/**
+ * Bootstrap Select
+ */
+/**
+ * Inputs Text
+ */
+/**
+ * Boxs
+ */
+/**
+ * Responsive Web Design in Sass: Using media queries
+ * Use:
+ *
+ * @include media(xs) {
+ *   property: value;
+ * }
+ *
+ * http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32
+ */
+/* @mixin input-text($params) {
+	$params: ($params['font-family']? $params['font-family']: );
+	$font-family, $font-size, $font-color, $input-bg, $input-border, $input-border-error
+
+	display: inline-block;
+	height: 42px;
+	padding: 0 15px;
+	font-family: $font-family;
+	font-size: $font-size;
+	color: $font-color;
+	line-height: 1;
+	background: $input-bg;
+	border: 1px solid $input-text-border;
+	outline: none;
+	&.error {
+		border-color: $input-text-border-error;
+	}
+} */
+/**
+ * Box search
+ * By: wesleyaltamiranda@gmail.com
+ */
+.box-search {
+  position: relative; }
+  @media (max-width: 767px) {
+    .box-search {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      right: 0;
+      padding: 10px;
+      background: #FFF;
+      z-index: 100; } }
+  .box-search ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-family: Muli;
+    font-size: 14px;
+    color: #9A9A9A;
+    font-style: italic; }
+  .box-search ::-moz-placeholder {
+    /* Firefox 19+ */
+    font-family: Muli;
+    font-size: 14px;
+    color: #9A9A9A;
+    font-style: italic; }
+  .box-search :-ms-input-placeholder {
+    /* IE 10+ */
+    font-family: Muli;
+    font-size: 14px;
+    color: #9A9A9A;
+    font-style: italic; }
+  .box-search :-moz-placeholder {
+    /* Firefox 18- */
+    font-family: Muli;
+    font-size: 14px;
+    color: #9A9A9A;
+    font-style: italic; }
+  .box-search .input-text {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding-left: 195px;
+    padding-right: 55px;
+    background: #FFF;
+    font-size: 16px;
+    color: #000; }
+  .box-search button {
+    display: inline-block;
+    position: absolute;
+    height: 40px;
+    right: 0;
+    margin-top: -1px;
+    padding: 0 13px 0 15px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #C9C9C9;
+    outline: none;
+    line-height: 46px; }
+    @media (max-width: 767px) {
+      .box-search button {
+        margin-top: 10px;
+        margin-right: 10px; } }
+  .box-search .select-search {
+    position: absolute;
+    width: 183px;
+    height: 40px;
+    left: 0;
+    padding-left: 11px;
+    background: #EEEEEE;
+    font-size: 14px;
+    color: #000;
+    border: none;
+    outline: none;
+    border-radius: 3px 0 0 3px; }
+
+.box-search-result {
+  position: absolute;
+  margin-top: -1px;
+  padding: 0 15px 10px;
+  box-shadow: 1px 3px 6px -1px #666;
+  border: 1px solid #B9B9B9;
+  left: 15px;
+  right: 15px;
+  background: #FFF;
+  font-family: Muli;
+  z-index: 10; }
+  @media (min-width: 991px) and (max-width: 1199px) {
+    .box-search-result {
+      margin-left: -15px;
+      margin-right: -15px; } }
+  @media (min-width: 767px) and (max-width: 991px) {
+    .box-search-result {
+      width: 609px;
+      padding-top: 0;
+      margin-left: -15px;
+      margin-right: -15px;
+      padding-left: 5px;
+      padding-right: 5px; } }
+  @media (max-width: 767px) {
+    .box-search-result {
+      left: 0;
+      right: 0;
+      margin-top: 55px;
+      border: none;
+      box-shadow: none; } }
+  .box-search-result .category-wrapper {
+    display: inline-block;
+    padding: 10px 0 0; }
+    @media (max-width: 767px) {
+      .box-search-result .category-wrapper {
+        display: none; } }
+    .box-search-result .category-wrapper .url-categoria {
+      display: block;
+      font-family: Muli;
+      font-size: 18px;
+      color: #D72525;
+      text-decoration: underline;
+      text-transform: uppercase; }
+  .box-search-result .image-link {
+    display: inline-block;
+    float: left;
+    width: 12%; }
+    @media screen and (max-width: 767px) {
+      .box-search-result .image-link {
+        width: 23%; } }
+    @media (max-width: 767px) {
+      .box-search-result .image-link {
+        width: 18%; } }
+    .box-search-result .image-link img {
+      width: 100%;
+      height: auto; }
+  .box-search-result .name,
+  .box-search-result .price {
+    display: inline-block;
+    float: left;
+    line-height: 1.3; }
+  .box-search-result .name {
+    width: 68%;
+    font-size: 16px;
+    color: #545454;
+    text-decoration: underline; }
+    @media screen and (max-width: 767px) {
+      .box-search-result .name {
+        width: 100%;
+        font-size: 12px; } }
+    @media (max-width: 767px) {
+      .box-search-result .name {
+        font-size: 10px; } }
+  .box-search-result .price {
+    width: 28%;
+    font-family: Muli;
+    font-size: 18px;
+    color: #D72525;
+    text-align: center; }
+    .box-search-result .price em {
+      font-style: normal; }
+  .box-search-result .content {
+    display: inline-block;
+    float: left;
+    width: 67%;
+    padding-top: 7px; }
+    @media screen and (max-width: 767px) {
+      .box-search-result .content {
+        width: 50%;
+        padding-top: 0;
+        padding-right: 5px; } }
+    @media (max-width: 767px) {
+      .box-search-result .content {
+        width: 44%; } }
+    @media screen and (min-height: 530px) and (max-width: 479px) {
+      .box-search-result .content {
+        padding-top: 5px; } }
+    @media screen and (max-width: 767px) {
+      .box-search-result .content .price {
+        display: none; } }
+  .box-search-result .buy {
+    display: inline-block;
+    float: left;
+    width: 20%;
+    padding-top: 10px;
+    text-align: center; }
+    @media screen and (max-width: 767px) {
+      .box-search-result .buy {
+        width: 27%;
+        padding-top: 0; } }
+    @media (max-width: 767px) {
+      .box-search-result .buy {
+        width: 38%;
+        text-align: right; } }
+    .box-search-result .buy .price {
+      display: none; }
+      @media screen and (max-width: 767px) {
+        .box-search-result .buy .price {
+          display: block;
+          float: none;
+          width: 100%;
+          font-size: 16px;
+          text-align: right; } }
+      @media (max-width: 767px) {
+        .box-search-result .buy .price {
+          float: right;
+          font-size: 18px; } }
+    .box-search-result .buy .buy-button-normal > a {
+      font-size: 0;
+      vertical-align: middle;
+      padding-left: 18%;
+      padding-right: 43px; }
+      @media screen and (max-width: 1199px) {
+        .box-search-result .buy .buy-button-normal > a {
+          padding-left: 15%;
+          padding-right: 35px; } }
+      .box-search-result .buy .buy-button-normal > a:before {
+        display: inline-block;
+        margin-top: 1px;
+        content: 'AGREGAR';
+        font-size: 13px;
+        text-transform: uppercase; }
+      .box-search-result .buy .buy-button-normal > a:after {
+        display: inline-block;
+        position: absolute;
+        right: 11px;
+        font-family: icomoon;
+        font-size: 17px;
+        line-height: 1;
+        content: '\E203';
+        vertical-align: top;
+        /* Gecko */
+        /* Opera */
+        /* Webkit */
+        -ms-transform: scaleX(-1);
+            transform: scaleX(-1);
+        /* Standard */
+        -webkit-filter: FlipH;
+                filter: FlipH; }
+        @media screen and (max-width: 1199px) {
+          .box-search-result .buy .buy-button-normal > a:after {
+            right: 8px; } }
+  .box-search-result .item {
+    padding: 5px 0;
+    border-top: 1px solid #CECECE; }
+    .box-search-result .item:before, .box-search-result .item:after {
+      content: " ";
+      display: table; }
+    .box-search-result .item:after {
+      clear: both; }
+    @media (max-width: 767px) {
+      .box-search-result .item {
+        padding: 5px 0 10px; } }
+    @media screen and (min-height: 530px) and (max-width: 479px) {
+      .box-search-result .item {
+        padding: 15px 0 20px; } }
+    .box-search-result .item > *:first-child {
+      padding-left: 0px;
+      padding-right: 15px; }
+      @media (max-width: 767px) {
+        .box-search-result .item > *:first-child {
+          padding-right: 5px; } }
+  .box-search-result li:first-child .item {
+    border-top: none; }
+  .box-search-result li .category-wrapper {
+    display: none; }
+
+/**
+ * Button Header User
+ * By: wesleyaltamiranda@gmail.com
+ */
+.btn-user {
+  position: relative;
+  width: 100%;
+  height: 70px;
+  padding: 14px 0;
+  cursor: pointer; }
+  @media (min-width: 991px) and (max-width: 1199px) {
+    .btn-user {
+      padding-left: 5px; } }
+  @media (min-width: 767px) and (max-width: 991px) {
+    .btn-user {
+      padding-left: 5px; } }
+  .btn-user i {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    color: #FFF; }
+    .btn-user i.icon-user {
+      margin-top: 0;
+      padding: 11px 0 0 10px;
+      border-radius: 100%;
+      font-size: 24px; }
+  .btn-user .text, .btn-user .box-quickcart .amount-items-in-cart span:before, .box-quickcart .amount-items-in-cart .btn-user span:before {
+    display: block;
+    font-size: 13px;
+    line-height: 1; }
+  .btn-user .text-name {
+    display: block;
+    font-size: 14px;
+    color: #000; }
+  .btn-user .btn-link {
+    display: inline-block;
+    padding: 0;
+    line-height: 1;
+    text-decoration: underline;
+    vertical-align: top; }
+    .btn-user .btn-link:hover {
+      text-decoration: none; }
+  .btn-user .content {
+    margin-left: 39px; }
+  .btn-user .welcome {
+    margin: 0;
+    display: block;
+    font-size: 13px;
+    color: #000;
+    line-height: 1.3;
+    letter-spacing: normal; }
+    .btn-user .welcome em {
+      font-style: normal; }
+    .btn-user .welcome a {
+      display: block;
+      font-size: 13px;
+      color: #FFF;
+      line-height: 1.3; }
+    .btn-user .welcome #login {
+      display: inline-block;
+      margin-top: 10px;
+      padding-right: 19px;
+      position: relative;
+      color: #FFF;
+      text-decoration: underline; }
+      .btn-user .welcome #login:after {
+        position: absolute;
+        right: 0;
+        font-family: icomoon;
+        content: '\e903';
+        font-size: 20px;
+        line-height: .9;
+        color: #FFE800; }
+      .btn-user .welcome #login:hover {
+        text-decoration: none; }
+  .btn-user.active {
+    border: 1px solid #CECECE;
+    border-top: none;
+    z-index: 100; }
+    .btn-user.active:after {
+      color: #EF155C;
+      -ms-transform: rotate(270deg);
+      /* IE 9 */
+      /* Chrome, Safari, Opera */
+      transform: rotate(270deg); }
+    .btn-user.active i {
+      color: #EF155C; }
+      .btn-user.active i.icon {
+        border: 2px solid #EF155C; }
+    .btn-user.active .btn-link {
+      text-decoration: none; }
+  .btn-user .link-arrow {
+    top: -3px; }
+
+.btn-location {
+  position: relative;
+  width: 100%;
+  height: 70px;
+  padding: 14px 0;
+  cursor: pointer; }
+  .btn-location i {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    color: #FFF; }
+    .btn-location i.icon-location {
+      width: 28px;
+      margin-top: 0;
+      margin-left: -8px;
+      padding: 3px 2px;
+      border-radius: 100%;
+      font-size: 33px; }
+  .btn-location .text, .btn-location .box-quickcart .amount-items-in-cart span:before, .box-quickcart .amount-items-in-cart .btn-location span:before {
+    display: block;
+    font-size: 13px;
+    line-height: .8; }
+  .btn-location .content {
+    margin-left: 28px; }
+  .btn-location .link-arrow {
+    top: -3px; }
+
+/**
+ * Header User
+ * By: wesleyaltamiranda@gmail.com
+ */
+.box-user {
+  position: absolute;
+  width: 100%;
+  top: 53px;
+  padding: 5px 15px;
+  background: #FFF;
+  border: 1px solid #CECECE;
+  z-index: 100; }
+  @media (max-width: 767px) {
+    .box-user {
+      top: 0;
+      padding-bottom: 30px; } }
+  .box-user a {
+    display: block;
+    padding: 14px 5px;
+    color: #000;
+    text-decoration: none !important;
+    text-align: right;
+    border-top: 1px solid #CECECE; }
+    .box-user a:first-child {
+      border-top: none; }
+    .box-user a i {
+      display: inline-block;
+      width: 25px;
+      height: 15px;
+      text-align: right;
+      font-size: 18px;
+      line-height: 1; }
+      .box-user a i:before {
+        position: absolute;
+        top: 0;
+        right: 0; }
+    .box-user a .icon-remove-2 {
+      font-size: 14px; }
+      .box-user a .icon-remove-2:before {
+        top: 2px; }
+
+/**
+ * Button Quickcart
+ * By: wesleyaltamiranda@gmail.com
+ */
+.btn-quickcart {
+  position: relative;
+  float: right;
+  height: 70px;
+  width: 100%;
+  max-width: 160px;
+  right: 0;
+  padding: 10px 0 14px 22px;
+  cursor: pointer; }
+  .btn-quickcart i {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+    color: #FFF;
+    text-align: right; }
+    .btn-quickcart i.icon-shopping-cart {
+      margin-top: 0;
+      padding: 16px 9px 10px 0;
+      /* Gecko */
+      /* Opera */
+      /* Webkit */
+      -ms-transform: scaleX(-1);
+          transform: scaleX(-1);
+      /* Standard */
+      -webkit-filter: FlipH;
+              filter: FlipH;
+      background-color: #930616;
+      border-radius: 100%; }
+      .ie9 .btn-quickcart i.icon-shopping-cart {
+        -webkit-filter: none;
+                filter: none; }
+  .btn-quickcart .text, .btn-quickcart .box-quickcart .amount-items-in-cart span:before, .box-quickcart .amount-items-in-cart .btn-quickcart span:before {
+    display: inline-block;
+    position: relative;
+    padding-right: 20px;
+    font-size: 13px;
+    color: #FFF;
+    line-height: 1; }
+  .btn-quickcart .text-price {
+    display: block;
+    padding-top: 3px;
+    font-family: Muli;
+    color: #D00415;
+    line-height: 1; }
+  .btn-quickcart .amount-items-in-cart .title {
+    display: none; }
+  .btn-quickcart .cart-info .amount-items,
+  .btn-quickcart .cart-info .amount-kits {
+    display: none; }
+  .btn-quickcart .cart-info li {
+    font-size: 0;
+    text-indent: -9999px; }
+    .btn-quickcart .cart-info li strong {
+      font-weight: normal; }
+    .btn-quickcart .cart-info li em {
+      display: block;
+      margin-top: 5px;
+      font-size: 12px;
+      color: #FFF;
+      line-height: 1;
+      font-style: normal;
+      text-indent: 0; }
+  .btn-quickcart .cart-info .amount-products-em {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 0;
+    left: 47px;
+    background: #FFE800;
+    font-family: "Varela Round";
+    font-size: 11px;
+    color: #D72525;
+    line-height: 24px;
+    border-radius: 100%;
+    text-align: center; }
+  .btn-quickcart .cart-info .total-cart-em {
+    display: block;
+    padding-top: 5px;
+    font-family: Muli;
+    font-size: 17px;
+    color: #FFE800;
+    line-height: 1; }
+  .btn-quickcart .content {
+    margin-left: 50px; }
+  .btn-quickcart.active {
+    border-color: #D72525;
+    cursor: default;
+    z-index: 100; }
+    .btn-quickcart.active:after {
+      display: none; }
+    .btn-quickcart.active i {
+      color: #EF155C; }
+      .btn-quickcart.active i.icon {
+        border: 2px solid #EF155C; }
+  .btn-quickcart .link-arrow {
+    top: -4px; }
+
+/**
+ * Quickcart
+ * By: wesleyaltamiranda@gmail.com
+ */
+.box-quickcart {
+  position: absolute;
+  min-width: 320px !important;
+  width: 100%;
+  top: 53px;
+  right: 0;
+  padding: 10px 15px 25px;
+  background: #FFF;
+  z-index: 100; }
+  @media (max-width: 767px) {
+    .box-quickcart {
+      width: 500%;
+      top: 0;
+      padding-bottom: 30px; } }
+  .box-quickcart .btn-link {
+    padding: 0; }
+  .box-quickcart .amount-items-in-cart .title,
+  .box-quickcart .amount-items-in-cart .amount-items,
+  .box-quickcart .amount-items-in-cart .amount-kits {
+    display: none; }
+  .box-quickcart .amount-items-in-cart strong,
+  .box-quickcart .amount-items-in-cart em {
+    display: block; }
+  .box-quickcart .amount-items-in-cart span {
+    display: block;
+    font-size: 0;
+    font-weight: normal;
+    text-indent: -9999px; }
+    .box-quickcart .amount-items-in-cart span:before {
+      display: block;
+      content: "Estas comprando:";
+      font-size: 13px;
+      text-indent: 0; }
+  .box-quickcart .amount-items-in-cart .amount-products em {
+    font-family: Muli;
+    font-size: 18px;
+    color: #000;
+    font-style: normal;
+    font-weight: normal; }
+    .box-quickcart .amount-items-in-cart .amount-products em:after {
+      padding-left: 5px;
+      content: "productos"; }
+  .box-quickcart .amount-items-in-cart .total-cart span:before {
+    content: "Total"; }
+  .box-quickcart .amount-items-in-cart .total-cart em {
+    font-family: Muli;
+    font-size: 24px;
+    color: #D72525;
+    font-style: normal; }
+  .box-quickcart .amount-items-in-cart li {
+    float: left;
+    width: 50%;
+    padding-left: 15px;
+    padding-right: 15px; }
+  .box-quickcart .text-price {
+    display: block;
+    font-family: Muli;
+    font-size: 24px; }
+    @media (max-width: 767px) {
+      .box-quickcart .text-price {
+        font-size: 14px; } }
+  .box-quickcart .text-buy {
+    display: block;
+    font-family: Muli;
+    font-size: 18px;
+    color: #000; }
+  @media (max-width: 767px) {
+    .box-quickcart .btn-link {
+      display: none; } }
+  .box-quickcart .btn-link .icon-chevron-left {
+    top: 2px;
+    margin-left: 5px;
+    -ms-transform: rotate(90deg);
+    /* IE 9 */
+    /* Chrome, Safari, Opera */
+    transform: rotate(90deg); }
+    .box-quickcart .btn-link .icon-chevron-left:before {
+      line-height: 1; }
+  .box-quickcart .list,
+  .box-quickcart .portal-minicart-ref {
+    max-height: 292px;
+    overflow-x: auto; }
+    @media (max-width: 767px) {
+      .box-quickcart .list,
+      .box-quickcart .portal-minicart-ref {
+        max-height: 243px; } }
+    .box-quickcart .list .vtexsc-cart,
+    .box-quickcart .portal-minicart-ref .vtexsc-cart {
+      display: block !important;
+      height: auto !important; }
+    .box-quickcart .list .vtexsc-productList,
+    .box-quickcart .portal-minicart-ref .vtexsc-productList {
+      border-spacing: 0; }
+      .box-quickcart .list .vtexsc-productList thead,
+      .box-quickcart .portal-minicart-ref .vtexsc-productList thead {
+        display: none; }
+      .box-quickcart .list .vtexsc-productList tr,
+      .box-quickcart .portal-minicart-ref .vtexsc-productList tr {
+        position: relative;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        width: 100%; }
+      .box-quickcart .list .vtexsc-productList td,
+      .box-quickcart .portal-minicart-ref .vtexsc-productList td {
+        padding: 2px 0;
+        border-bottom: 1px solid #CDCDCD; }
+      .box-quickcart .list .vtexsc-productList .cartSkuImage,
+      .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuImage {
+        width: 54px; }
+        @media (max-width: 767px) {
+          .box-quickcart .list .vtexsc-productList .cartSkuImage,
+          .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuImage {
+            width: 20%; } }
+      .box-quickcart .list .vtexsc-productList .cartSkuName,
+      .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuName {
+        width: 136px;
+        padding-right: 15px; }
+        @media (max-width: 767px) {
+          .box-quickcart .list .vtexsc-productList .cartSkuName,
+          .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuName {
+            width: 45%; } }
+        .box-quickcart .list .vtexsc-productList .cartSkuName h4,
+        .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuName h4 {
+          margin: 0;
+          padding-top: 3px;
+          font-family: Muli;
+          font-size: 13px;
+          color: #FFF; }
+          .box-quickcart .list .vtexsc-productList .cartSkuName h4 a,
+          .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuName h4 a {
+            color: #FFF;
+            text-decoration: underline;
+            line-height: 1; }
+        .box-quickcart .list .vtexsc-productList .cartSkuName p,
+        .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuName p {
+          padding-top: 3px;
+          font-size: 12px;
+          line-height: 1; }
+        .box-quickcart .list .vtexsc-productList .cartSkuName .availability,
+        .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuName .availability {
+          visibility: hidden;
+          font-size: 0; }
+      .box-quickcart .list .vtexsc-productList .cartSkuPrice,
+      .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuPrice {
+        width: 55px;
+        vertical-align: top; }
+        @media (max-width: 767px) {
+          .box-quickcart .list .vtexsc-productList .cartSkuPrice,
+          .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuPrice {
+            width: 20%; } }
+        .box-quickcart .list .vtexsc-productList .cartSkuPrice .bestPrice,
+        .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuPrice .bestPrice {
+          display: inline-block;
+          height: 18px;
+          overflow: hidden;
+          font-family: Muli;
+          font-size: 12px;
+          line-height: 2;
+          color: #D72525; }
+      .box-quickcart .list .vtexsc-productList .cartSkuQuantity,
+      .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuQuantity {
+        position: relative;
+        width: 0;
+        margin: 0;
+        padding: 0;
+        border-bottom: none; }
+        .box-quickcart .list .vtexsc-productList .cartSkuQuantity .vtexsc-skuQtt,
+        .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuQuantity .vtexsc-skuQtt {
+          font-size: 12px;
+          color: #FFF; }
+          .box-quickcart .list .vtexsc-productList .cartSkuQuantity .vtexsc-skuQtt:before,
+          .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuQuantity .vtexsc-skuQtt:before {
+            content: 'x'; }
+        .box-quickcart .list .vtexsc-productList .cartSkuQuantity .cartSkuQtt,
+        .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuQuantity .cartSkuQtt {
+          position: absolute;
+          top: 18px;
+          left: -55px; }
+          @media screen and (max-width: 767px) {
+            .box-quickcart .list .vtexsc-productList .cartSkuQuantity .cartSkuQtt,
+            .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuQuantity .cartSkuQtt {
+              left: -80px; } }
+          @media screen and (max-width: 425px) {
+            .box-quickcart .list .vtexsc-productList .cartSkuQuantity .cartSkuQtt,
+            .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuQuantity .cartSkuQtt {
+              left: -75px; } }
+          @media screen and (max-width: 385px) {
+            .box-quickcart .list .vtexsc-productList .cartSkuQuantity .cartSkuQtt,
+            .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuQuantity .cartSkuQtt {
+              left: -68px; } }
+          @media screen and (max-width: 360px) {
+            .box-quickcart .list .vtexsc-productList .cartSkuQuantity .cartSkuQtt,
+            .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuQuantity .cartSkuQtt {
+              left: -65px; } }
+          @media screen and (max-width: 345px) {
+            .box-quickcart .list .vtexsc-productList .cartSkuQuantity .cartSkuQtt,
+            .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuQuantity .cartSkuQtt {
+              left: -63px; } }
+          @media screen and (max-width: 330px) {
+            .box-quickcart .list .vtexsc-productList .cartSkuQuantity .cartSkuQtt,
+            .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuQuantity .cartSkuQtt {
+              left: -58px; } }
+      .box-quickcart .list .vtexsc-productList .cartSkuActions,
+      .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuActions {
+        width: 25px;
+        left: 40px;
+        vertical-align: top;
+        text-align: center; }
+        @media (max-width: 767px) {
+          .box-quickcart .list .vtexsc-productList .cartSkuActions,
+          .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuActions {
+            width: 10%; } }
+        .box-quickcart .list .vtexsc-productList .cartSkuActions .cartSkuRemove a,
+        .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuActions .cartSkuRemove a {
+          display: block !important;
+          padding-top: 3px;
+          background: none;
+          border: none;
+          font-size: 0;
+          visibility: hidden;
+          outline: none; }
+          .box-quickcart .list .vtexsc-productList .cartSkuActions .cartSkuRemove a:before,
+          .box-quickcart .portal-minicart-ref .vtexsc-productList .cartSkuActions .cartSkuRemove a:before {
+            display: inline-block;
+            position: relative;
+            top: 1px;
+            font-family: icomoon;
+            font-size: 11px;
+            color: #CDCDCD;
+            visibility: visible;
+            content: "\E208"; }
+      .box-quickcart .list .vtexsc-productList .sku-imagem img,
+      .box-quickcart .portal-minicart-ref .vtexsc-productList .sku-imagem img {
+        width: 40px;
+        height: 40px;
+        margin-top: 5px; }
+    .box-quickcart .list .cartFooter,
+    .box-quickcart .portal-minicart-ref .cartFooter {
+      display: none; }
+    @media (max-width: 767px) {
+      .box-quickcart .list .vtexsc-center,
+      .box-quickcart .portal-minicart-ref .vtexsc-center {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto; } }
+  .box-quickcart .portal-minicart-ref {
+    margin-top: 10px; }
+
+.progressbar {
+  background: #F5F5F5; }
+  .progressbar .val {
+    height: 4px;
+    background: #D72525;
+    border-radius: 5px; }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  opacity: .5;
+  z-index: 99; }
+
+.overlay-disabled {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  cursor: default; }

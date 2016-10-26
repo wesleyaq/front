@@ -1,0 +1,28 @@
+mixin  box-menu-product(name, brand, image, price, pricen, offer, imgFlag)
+	.box-menu-product(itemscope itemtype="http://schema.org/Product")
+		figure
+			if offer === true
+				span.tag-offer OFERTA EXCLUSIVA
+
+		a.image(href="#" itempro="url")
+			img.flag(src=baseImagen+"flags/24/"+imgFlag alt="Argentina" width="24" height="24")
+			img.img(src=baseImagen+"tmp/"+image alt=name width="196" height="196" itempro="imagen")
+
+		.product-fields
+			.field-country(data-index="1")
+				.product-field.product_field_29.product-field-type_5 Pais de origen
+					ul
+						li.argentina Argentina
+
+		h3(itemscope itemtype="http://schema.org/Brand"): a(href="#" itempro="name") #{brand}
+
+		h4(itempro="name"): a(href="#" itempro="url") #{name}
+
+		.sector-price
+			span.text-price-n P.Normal&nbsp;
+				strong S/#{pricen}
+
+			span.text-price S/ #{price}
+				small x Kg
+
+		button.btn.btn-default.btn-block VER PRODUCTO

@@ -1,0 +1,84 @@
+//- Header
+//- By: wesleyaltamiranda@gmail.com
+.header-fixed
+	section#header-superior.top
+		.container-fluid
+			.col-hd-2.-pt7
+				a#logo.logo(href="index.html" alt="Logo")
+					img(src=baseImagen+"logo.png" alt="Logo" width="100%" height="auto")
+
+			.col-hd-5.cont-search.-pt14
+				form.box-search(action="#")
+					select.select-search
+						option(value="") Todas las categorías
+						option(value="Categoría 1") Categoría 1
+						option(value="Categoría 2") Categoría 2
+
+					button.icon.icon-lens.js-btn-search-submit(type="submit")
+					input.input-text.js-input-search(type="search" placeholder="Busca tus productos")
+
+			.col-hd-3
+				.col-sm-3
+					.btn-location
+						.pull-left
+							i.icon.icon-location
+
+						.content
+							span.text.-pt7 Estas en:
+							a.link-arrow(href="#") Ciudad
+
+				.col-sm-3
+					.btn-user
+						//-.js-btn-user
+						.pull-left
+							i.icon.icon-user
+
+						.content
+							.ajax-content-loader
+								p.welcome
+									//- span.text Bienvenido
+									//- span.text-name
+									//- | Jose Perez
+									em
+										a#login Ingresa
+									//- em
+									//- 	a(href="/no-cache/user/logout")
+									//- 		span.logged
+
+							//- a.btn.btn-link.btn-sm.hidden.js-lgn-show(href="#") Ver Perfil
+
+					nav.box-user.js-box-user.hidden
+						a(href="#") Mis pedidos
+							i.icon.icon-notes-2
+						a.btn-close-s.hidden.js-lgn-show(href="#") Cerrar sesión
+							i.icon.icon-remove-2
+
+				.col-sm-4
+					.btn-quickcart.hidden-xs(data-option="open")
+						//-.js-btn-quickcart
+						.pull-left
+							i.icon.icon-shopping-cart
+
+						.content
+							.portal-totalizers-ref
+								.amount-items-in-cart
+									.cartInfoWrapper
+										span.title: span Hidden
+										ul.cart-info
+											li.amount-products
+												strong: span Total de Produtos: <em class="amount-products-em">13</em>
+											li.amount-items
+												strong: span Itens: <em class="amount-items-em">Hidden</em>
+											li.amount-kits
+												strong: span Total de Kits: <em class="amount-kits-em">Hidden</em>
+											li.total-cart
+												strong: span Valor Total: <em class="total-cart-em">S/ 239</em></li>
+							span.link-arrow Mostrar
+
+	section#header-inferior.bottom
+		.container-fluid.no-gutter-left
+			include ../partials/menu.jade
+
+			a#telefono.box-call.pull-right(href="tel:1234567")
+				i.icon.icon-phone
+				span 123 4567

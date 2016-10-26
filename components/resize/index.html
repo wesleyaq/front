@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Resize JS</title>
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body>
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" >
+        (function($) {
+            var resizeTimer; // Set resizeTimer to empty so it resets on page load
+
+            function resizeFunction() {
+                // Stuff that should happen on resize
+                var $win = $(window),
+                $wwidth = $win.width();
+                // console.log('Width:', $wwidth);
+
+                if($wwidth <= 768) {
+                    $('body').css('background', 'red');
+
+                } else if($wwidth <= 992) {
+                    $('body').css('background', 'blue');
+
+                } else if($wwidth <= 1200) {
+                    $('body').css('background', 'green');
+
+                } else {
+                    $('body').css('background', 'grey');
+                }
+            };
+
+            // On resize, run the function and reset the timeout
+            // 250 is the delay in milliseconds. Change as you see fit.
+            $(window).on('load resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(resizeFunction, 250);
+            });
+
+        })(jQuery);
+    </script>
+  </body>
+</html>

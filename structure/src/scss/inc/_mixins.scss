@@ -1,0 +1,113 @@
+// JUST FOR DEBUGGING
+@mixin out($color:red) {
+  outline:1px solid $color;
+}
+
+//  MIXINS
+@mixin escondetxt($where:-9999px) {
+  text-indent: $where;
+  overflow: hidden;
+}
+
+@mixin zero() {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin gradient-vertical($startColor: #1e5799, $endColor: #7db9e8) {
+  background: $endColor;
+  background: linear-gradient(to bottom,  $startColor 0%,$endColor 100%);
+  filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', EndColorStr='#{$endColor}', GradientType=0)";
+}
+
+@mixin gradient-horizontal($startColor: #1e5799, $endColor: #7db9e8) {
+  background: $endColor;
+  background: linear-gradient(to right, $startColor, $endColor);
+  filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', EndColorStr='#{$endColor}', GradientType=1)";
+}
+
+@mixin opacity($opacity:0.5) {
+  opacity: $opacity;
+  $opperc: $opacity * 100;
+  -ms-filter: #{"progid:DXImageTransform.Microsoft.Alpha(opacity=${opperc})"};
+  filter: #{"alpha(opacity=${opperc})"};
+}
+
+//- Centrar Bloque
+@mixin block-center() {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//- Limpiar Bloque
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+//- Rotate mirror
+@mixin rotate-mirror() {
+	-moz-transform: scaleX(-1);    /* Gecko */
+  -o-transform: scaleX(-1);      /* Opera */
+  -webkit-transform: scaleX(-1); /* Webkit */
+  transform: scaleX(-1);         /* Standard */
+  filter: FlipH;
+}
+
+@mixin rotate($deg) {
+	-ms-transform: rotate(#{$deg}); /* IE 9 */
+  -webkit-transform: rotate(#{$deg}); /* Chrome, Safari, Opera */
+  transform: rotate(#{$deg});
+}
+
+/**
+ * Responsive Web Design in Sass: Using media queries
+ * Use:
+ *
+ * @include media(xs) {
+ *   property: value;
+ * }
+ *
+ * http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32
+ */
+
+@mixin media($media) {
+  @if $media == xs {
+    @media (max-width: $breakpoint-sm) { @content; }
+  }
+  @else if $media == sm {
+    @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) { @content; }
+  }
+  @else if $media == md {
+    @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) { @content; }
+  }
+  @else if $media == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  }
+}
+
+//- Input Text
+/* @mixin input-text($params) {
+	$params: ($params['font-family']? $params['font-family']: );
+	$font-family, $font-size, $font-color, $input-bg, $input-border, $input-border-error
+
+	display: inline-block;
+	height: 42px;
+	padding: 0 15px;
+	font-family: $font-family;
+	font-size: $font-size;
+	color: $font-color;
+	line-height: 1;
+	background: $input-bg;
+	border: 1px solid $input-text-border;
+	outline: none;
+	&.error {
+		border-color: $input-text-border-error;
+	}
+} */

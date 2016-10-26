@@ -1,0 +1,109 @@
+/**
+* Breakpoints
+*/
+$breakpoint-xs: 479px;
+$breakpoint-sm: 767px;
+$breakpoint-md: 991px;
+$breakpoint-lg: 1199px;
+$breakpoint-lgm: $breakpoint-lg+100;
+
+/**
+ * Colors
+ */
+$color-default: #000;
+$color-primary: #FFF;
+$color-secundary: #D72525;
+$color-third: #B81818;
+$color-four: #D00415;
+$color-fifth: #FFE800;
+$color-six: #F8F8F8;
+$color-seven: #EAEAEA;
+$color-eight: #9A9A9A;
+
+$color-nine: #1D6F42;
+$color-ten: #878787;
+$color-eleven: #2E2D2D;
+
+$bg-color-default: $color-default;
+$bg-color-primary: $color-primary;
+$bg-color-secundary: $color-secundary;
+$bg-color-third: $color-third;
+$bg-color-four: $color-four;
+$bg-color-fifth: $color-fifth;
+$bg-color-six: $color-six;
+$bg-color-seven: $color-seven;
+
+
+$font-color-default: $color-default;
+$font-color-primary: $color-primary;
+$font-color-secundary: $color-secundary; //#787878;
+$font-color-fifth: $color-fifth;
+$font-color-placeholder: $color-eight;
+
+$font-color-footer: #333;
+
+/**
+ * Buttons
+ */
+$color-button-default: #EF155C;
+$color-button-default-hover: #a70136;
+
+$color-button-primary: #E3000E;
+$color-button-primary-hover: lighten($color-button-primary, 10%);
+
+$color-button-disabled: #C3C3C3;
+
+/**
+ * Font
+ */
+$font-family-pt-sans: 'PT Sans', sans-serif, Arial;
+$font-family-pt-sans-bold: 'PT Sans Bold', sans-serif, Arial;
+$font-family-pt-sans-italic: 'PT Sans Italic', sans-serif, Arial;
+$font-family-pt-sans-bold-italic: 'PT Sans Bold Italic', sans-serif, Arial;
+$font-family-pt-sans-narrow: 'PT Sans Narrow', sans-serif, Arial;
+
+$font-family-muli: Muli;
+$font-family-vr: 'Varela Round';
+$font-family-icons: icomoon;
+
+/**
+ * Sizes
+ */
+$font-size-default: 22px;
+$font-size-primary: 18px;
+$font-size-secundary: 16px;
+$font-size-third: 14px;
+$font-size-button: 13px;
+$font-size-sixth: 12px;
+
+/**
+ * Bootstrap Select
+ */
+
+$color-red-error: rgb(185, 74, 72);
+$color-grey-arrow: rgba(204, 204, 204, 0.2);
+
+$width-default: 220px; // 3 960px-grid columns
+
+$zindex-select-dropdown: 1060; // must be higher than a modal background (1050)
+
+/**
+ * Inputs Text
+ */
+$input-text-font-family: $font-family-muli;
+$input-text-font-size: $font-size-third;
+$input-text-color: #6A6768;
+$input-text-bg: #FBF5F6;
+$input-text-border: #CECECE;
+$input-text-border-error: #D88676;
+
+$text-font-size-error: $font-size-sixth;
+$text-color-error: #FF0000;
+
+
+/**
+ * Boxs
+ */
+$box-bg-primary: $bg-color-secundary;
+$box-border-color-primary: #DCDCDC;
+$box-border-primary: 1px solid $box-border-color-primary;

@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Reusable</title>
+    <meta name="viewport" content="width=device-width">
+    <style>
+    	.chrono {
+    		width: 400px;
+    		margin: auto;
+    		margin-bottom: 30px;
+    		padding: 10px;
+    		background:#eee;
+    		border: 1px solid #222;
+    	}
+		.chrono .container {
+			display: flex;
+		}
+		.chrono .container div {
+			width: 100%;
+			padding: 20px;
+			flex-direction: column;
+			font-size: 2em;
+			text-align: center;
+		}
+		.chrono .start {
+			border-radius: 2px;
+			padding: 10px;
+			display: block;
+			width: 100%;
+			font-size: 1.4em;
+			border: 1px solid #222;
+			background: #222;
+			color: #eee;
+			cursor: pointer;
+		}
+		.chrono .start:hover {
+			background: #333;
+			color: #eee;
+		}
+    </style>
+  </head>
+  <body>
+    <div id="chrono-a" class="chrono">
+	    <div class="container">
+	        <div class="hour">00</div>
+	        <div class="divider">:</div>
+	        <div class="minute">00</div>
+	        <div class="divider">:</div>
+	        <div class="second">00</div>
+	    </div>
+
+	    <button class="start">Comenzar</button>
+	</div>
+
+	<div id="chrono-b" class="chrono">
+	    <div class="container">
+	        <div class="hour">00</div>
+	        <div class="divider">:</div>
+	        <div class="minute">00</div>
+	        <div class="divider">:</div>
+	        <div class="second">00</div>
+	    </div>
+
+	    <button class="start">Comenzar</button>
+	</div>
+
+    <script type="text/javascript">
+    	var chrono = function(id) {
+		    var target = {};
+		    var isRunning = false;
+		    var timer;    
+		    var time = {
+		        hour: 0,
+		        second: 0,
+		        minute: 0
+		    };
+		    
+		    function start(){
+		        timer = setInterval(function(){
+		            // seconds
+		            time.second++;
+		            if(time.second >= 60) {
+		                time.second = 0;
+		                time.minute++;
+		            }      
+
+		            // minutes
+		            if(time.minute >= 60) {
+		                time.minute = 0;
+		                time.hour++;
+		            }
+
+		            target.hour.innerHTML = time.hour < 10 ? '0' + time.hour : time.hour;
+		            target.minute.innerHTML = time.minute < 10 ? '0' + time.minute : time.minute;
+		            target.second.innerHTML = time.second < 10 ? '0' + time.second : time.second;
+		            
+		            // console.log('Time elapsed: ' + time.hour + ':' + time.minute + ':' + time.second + ' from ' + id);
+		            
+		            isRunning = true;
+		        }, 1000);
+		    }
+		    
+		    function stop()
+		    {
+		        isRunning = false;
+		        clearInterval(timer);
+		    }
+		    
+		    function init(id){
+		        target = {
+		            hour: document.querySelectorAll(id + " .hour")[0],
+		            minute: document.querySelectorAll(id + " .minute")[0],
+		            second: document.querySelectorAll(id + " .second")[0],
+		        };
+		        
+		        var _btnStart = document.querySelectorAll(id + " .start")[0];
+		        
+		        _btnStart.addEventListener('click', function(){
+		            if(!isRunning) {
+		                _btnStart.innerHTML = 'Detener';
+		                start();
+		            }
+		            else {
+		                _btnStart.innerHTML = 'Continuar';
+		                stop();
+		            }
+		        })
+		    }
+		    
+		    init(id);
+		};
+
+		document.addEventListener("DOMContentLoaded", function(event) { 
+		  chrono('#chrono-a');
+
+		  chrono('#chrono-b');
+		});
+		
+    </script>
+  </body>
+</html>
