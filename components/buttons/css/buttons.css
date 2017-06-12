@@ -1,0 +1,66 @@
+.btn {
+	display: inline-block;
+	padding: 10px 25px;
+	font-size: 16px;
+	color: #FFF;
+	background-color: #808080;
+	border: none;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+	outline: none;
+}
+.btn:hover {
+	opacity: .7;
+}
+.btn[disabled] {
+	opacity: .5;
+	cursor: not-allowed;
+}
+
+/*
+ * Link
+ */
+ .btn.-link {
+ 	padding: 0;
+ 	color: #000;
+ 	background-color: transparent;
+ }
+
+/*
+ * Colors
+ */
+.btn.-pri {
+	background-color: #4CAF50;
+}
+.btn.-sec {
+	background-color: #2196F3;
+}
+.btn.-thi {
+	background-color: #ff9800;
+}
+
+/*
+ * Sizes
+ */
+
+.btn.-xs {
+	padding: 5px 15px;
+	font-size: 13px;
+}
+.btn.-sm {
+	padding: 8px 20px;
+	font-size: 15px;
+}
+.btn.-md {
+	padding: 13px 30px;
+	font-size: 18px;
+}
+.btn.-lg {
+	padding: 15px 35px;
+	font-size: 20px;
+}
+
+.btn.-block {
+	display: block;
+	width: 100%;
+}
