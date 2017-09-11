@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+	<title>Acordeon</title>
+
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Abeezee:400|Open+Sans:400,600,700|Source+Sans+Pro:400,600">
+	<link rel="stylesheet" type="text/css" href="css/defaults.css">
+	<link rel="stylesheet" type="text/css" href="css/wcollapse.css">
+</head>
+<body>
+	<div class="header">
+		<h1>Custom Collapse Jquery Ver 1.0</h1>
+	</div>
+
+	<div class="main">
+
+		<wcollapse class="wcollapse" style="margin-top:20px;">
+			<item class="aco-section">
+				<h3 class="acs-title" data-wco="" data-open="#cont-1">Collapse Seccción #1</h3>
+				<div class="acs-content" id="cont-1">
+					<p>Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla mi, rutrum ut feugiat at, vestibulum ut neque? Cras tincidunt enim vel aliquet facilisis. Duis congue ullamcorper vehicula. Proin nunc lacus, semper sit amet elit sit amet, aliquet pulvinar erat. Nunc pretium quis sapien eu rhoncus. Suspendisse ornare gravida mi, et placerat tellus tempor vitae.</p>
+				</div>
+			</item>
+			<item class="aco-section">
+				<h3 class="acs-title" data-wco="" data-open="#cont-2">Collapse Seccción #2</h3>
+				<div class="acs-content" id="cont-2">
+					<p>Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla mi, rutrum ut feugiat at, vestibulum ut neque? Cras tincidunt enim vel aliquet facilisis. Duis congue ullamcorper vehicula. Proin nunc lacus, semper sit amet elit sit amet, aliquet pulvinar erat. Nunc pretium quis sapien eu rhoncus. Suspendisse ornare gravida mi, et placerat tellus tempor vitae.</p>
+				</div>
+			</item>
+		</wcollapse>
+		
+		<button class="btn js-wc-open" style="margin-top:20px;">Abrir opción 2</button>
+		<button class="btn js-wc-close" style="margin-top:5px;">Cerrar opción 2</button>
+		<button class="btn js-wc-toggle" style="margin-top:5px;">Toggle opción 2</button>
+
+		<wcollapse class="wcollapse" style="margin-top:20px;">
+			<item class="aco-section">
+				<h3 class="acs-title" data-wco-group="" data-open="#group1-1" data-wc-go="group1">Collapse Seccción #1</h3>
+				<div class="acs-content" id="group1-1" data-wc-gc="group1">
+					<p>Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla mi, rutrum ut feugiat at, vestibulum ut neque? Cras tincidunt enim vel aliquet facilisis. Duis congue ullamcorper vehicula. Proin nunc lacus, semper sit amet elit sit amet, aliquet pulvinar erat. Nunc pretium quis sapien eu rhoncus. Suspendisse ornare gravida mi, et placerat tellus tempor vitae.</p>
+				</div>
+			</item>
+
+			<item class="aco-section">
+				<h3 class="acs-title" data-wco-group="" data-open="#group1-2" data-wc-go="group1">Collapse Seccción #2</h3>
+				<div class="acs-content" id="group1-2" data-wc-gc="group1">
+					<p>Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla mi, rutrum ut feugiat at, vestibulum ut neque? Cras tincidunt enim vel aliquet facilisis. Duis congue ullamcorper vehicula. Proin nunc lacus, semper sit amet elit sit amet, aliquet pulvinar erat. Nunc pretium quis sapien eu rhoncus. Suspendisse ornare gravida mi, et placerat tellus tempor vitae.</p>
+				</div>
+			</item>
+		</wcollapse>
+
+		<wcollapse class="wcollapse" style="margin-top:20px;">
+			<item class="aco-section">
+				<h3 class="acs-title" data-wco-group="" data-open="#group1-3" data-wc-go="group1">Collapse Seccción #3</h3>
+				<div class="acs-content" id="group1-3" data-wc-gc="group1">
+					<p>Mauris interdum fringilla augue vitae tincidunt. Curabitur vitae tortor id eros euismod ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla mi, rutrum ut feugiat at, vestibulum ut neque? Cras tincidunt enim vel aliquet facilisis. Duis congue ullamcorper vehicula. Proin nunc lacus, semper sit amet elit sit amet, aliquet pulvinar erat. Nunc pretium quis sapien eu rhoncus. Suspendisse ornare gravida mi, et placerat tellus tempor vitae.</p>
+				</div>
+			</item>
+		</wcollapse>
+	</div>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/wcollapse.js"></script>
+</body>
+</html>
