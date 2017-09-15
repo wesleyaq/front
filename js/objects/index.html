@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Object</title>
+</head>
+<body>
+	<script>
+		var Greeter = (function () {
+		    function Greeter(message) {
+		        this.greeting = message;
+		        this.greet = function () {
+			    	return this.greeting;
+			    };
+		    }
+		    return Greeter;
+		}());
+
+		var greeter = new Greeter("1. Hello, world");
+		console.log(greeter, greeter.greet());
+
+
+		var Msg = (function () {
+		    function Msg(message) {
+		        this.text = message;
+		    }
+		    Msg.prototype.getMessage = function () {
+		        return this.text;
+		    };
+		    return Msg;
+		}());
+
+		var msg = new Msg("2. Hello, world");
+		console.log(msg, msg.getMessage());
+	</script>
+</body>
+</html>

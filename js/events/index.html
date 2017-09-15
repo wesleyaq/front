@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Events JS</title>
+
+	<style>
+		tabs {
+			font-family: Arial;
+			font-size: 13px;
+		}
+		tabs tabs-link {
+			font-size: 0;
+		}
+		tabs tab-link {
+			display: inline-block;
+			padding: 10px;
+			font-size: 13px;
+			color: #FFF;
+			background-color: black;
+			cursor: pointer;
+		}
+		tabs tab-link.active {
+			background-color: red;
+		}
+		tab-content {
+			display: block;
+		}
+		.hide {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<tabs>
+		<tabs-link>
+			<tab-link class="btn active" data-tab="#tab-1">Tab 1</tab-link>
+			<tab-link class="btn" data-tab="#tab-2">Tab 2</tab-link>
+			<tab-link class="btn" data-tab="#tab-3">Tab 3</tab-link>
+		</tabs-link>
+
+		<tab-content id="tab-1">Tab Contenido 1</tab-content>
+		<tab-content id="tab-2" style="display:none;">Tab Contenido 2</tab-content>
+		<tab-content id="tab-3" style="display:none;">Tab Contenido 3</tab-content>
+	</tabs>
+	<br><br><br>
+	
+	<tabs>
+		<tabs-link>
+			<tab-link class="btn" data-tab="#tab-1">Tab 1</tab-link>
+			<tab-link class="btn active" data-tab="#tab-2">Tab 2</tab-link>
+			<tab-link class="btn" data-tab="#tab-3">Tab 3</tab-link>
+		</tabs-link>
+
+		<tab-content id="tab-1" style="display:none;">Tab Contenido 1</tab-content>
+		<tab-content id="tab-2">Tab Contenido 2</tab-content>
+		<tab-content id="tab-3" style="display:none;">Tab Contenido 3</tab-content>
+	</tabs>
+
+	<script>
+		var $tabLink = document.querySelectorAll("tab-link");
+
+		//Event clic tab-link
+		for(i = 0; i < $tabLink.length; i++) {
+			$tabLink[i].addEventListener("click", tabsEvent);
+		}
+
+		function tabsEvent(e) {
+			var $t = this,
+			$tabs = $t.closest("tabs"),
+			$tabLink = $tabs.querySelector("tab-link.active"),
+			$tabsCont = $tabs.querySelectorAll("tab-content");
+
+			$tabLink.removeClass("active");
+			$t.addClass("active");
+
+			for(i = 0; i < $tabsCont.length; i++) {
+				$tabsCont[i].style.display = "none";
+			}
+			$tabCont = $tabs.querySelector("tab-content" + this.getAttribute("data-tab"));
+			$tabCont.style.display = "block";
+		}
+
+		//Helpers
+		if (window.Element) {
+			if (!Element.prototype.closest) {
+		    Element.prototype.closest = function(s) {
+		        var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+	        	i,
+	          el = this;
+		        do {
+		          i = matches.length;
+		          while (--i >= 0 && matches.item(i) !== el) {};
+		        } while ((i < 0) && (el = el.parentElement)); 
+		        return el;
+		    };
+			}
+
+			if (!Element.prototype.hasClass) {
+				Element.prototype.hasClass = function(className) {
+					var $t = this;
+
+				  if ($t.classList)
+				    return $t.classList.contains(className);
+				  else
+				    return !!$t.className.match(new RegExp("(\\s|^)" + className + "(\\s|$)"));
+				};
+			}
+
+			if (!Element.prototype.addClass) {
+				Element.prototype.addClass = function(className) {
+					var $t = this;
+
+					if ($t.classList)
+			    	$t.classList.add(className);
+			  	else if (!$t.hasClass(className)) $t.className += " " + className;
+				};
+			}
+
+			if (!Element.prototype.removeClass) {
+				Element.prototype.removeClass = function(className) {
+					var $t = this;
+
+				  if ($t.classList)
+				    $t.classList.remove(className);
+				  else if ($t.hasClass(className)) {
+				    var reg = new RegExp("(\\s|^)" + className + "(\\s|$)");
+				    $t.className=$t.className.replace(reg, " ");
+				  }
+				};
+			}
+		}
+	</script>
+</body>
+</html>

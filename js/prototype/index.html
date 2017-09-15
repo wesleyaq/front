@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Prototype</title>
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body>
+    <script type="text/javascript">
+      // STRING
+      String.prototype.isEmptyOrNull = function() {
+          if(this === null) return true;
+          if(this.trim().length === 0) return true;
+          return false;
+      };
+      console.log('Hola mundo'.isEmptyOrNull());
+
+      // NUMBER
+      Number.prototype.pad = function(){
+        var pad = '000';
+        return (pad + this.toString()).slice(-pad.length);
+      }
+      console.log((4).pad());
+
+      // ARRAY
+      Array.prototype.where = function(key, value){
+        var result = [];
+        this.forEach(function(object, index){
+          if(object[key].toLowerCase().indexOf(value.toLowerCase()) > -1){
+            result.push(object);
+          }
+        })
+        return result;
+      }
+
+      Array.prototype.firstOrDefault = function(){
+        return this.length > 0 ? this[0] : null;
+      }
+
+      Array.prototype.lastOrDefault = function(){
+        return this.length > 0 ? this[this.length - 1] : null;
+      }
+
+      var users = [
+        { Nombre: 'Eduardo Rodriguez', Edad: 26 },
+        { Nombre: 'Victor Raul', Edad: 30 },
+        { Nombre: 'Jose Pardo', Edad: 45 },
+        { Nombre: 'Eduardo Merina', Edad: 54 },
+      ];
+      console.log(
+        users.where('Nombre', 'Eduardo').lastOrDefault()
+      );
+    </script>
+  </body>
+</html>

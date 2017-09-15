@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Eventos Nativos</title>
+</head>
+<body>
+	<button id="btn">Button Event</button>
+	
+	<script>
+		var btn = document.getElementById('btn');
+		btn.onclick = function () {
+		    console.log('Click', this);
+		};
+		btn.onmouseover = function () {
+		    console.log('MouseOver', this);
+		};
+		btn.onmouseout = function () {
+		    console.log('MouseOut', this);
+		};
+	</script>
+</body>
+</html>
