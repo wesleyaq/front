@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Eventos Nativos</title>
+	<style>
+		nav {
+			display: inline-block;
+		}
+		card {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">Button Event ID</button>
+
+	<button class="btn">Button Event Class</button>
+
+	<button data-btn="true">Button Event Attr</button>
+	
+	<nav class="menu">
+		<a href="#" class="btns">Element 1</a>
+		<a href="#" class="btns">Element 2</a>
+		<a href="#" class="btns">Element 3</a>
+		<a href="#" class="btns">Element 4</a>
+	</nav>
+
+	<div id="elc"></div>
+
+	<card>
+		<span class="name">Nombre</span>
+		<span class="name">Email</span>
+		<p class="bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+	</card>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function(event) {
+			/**
+			 * Selectors
+			 */
+			var btnID 	= document.getElementById('btn'),
+			btnClass 	= document.getElementsByClassName('btn'),
+			btnClass 	= document.querySelector('.btn'),
+			btnAttr		= document.querySelector('[data-btn="true"]'),
+			btnNavAll 	= document.querySelectorAll('.btns, .menu > a'),
+			elc 		= document.querySelector('#btn'),
+			template	= document.querySelector('card');
+
+			console.log(btnID, btnClass, btnAttr, btnNavAll, template);
+
+			var i,
+			len = btnNavAll.length;
+
+			for (i = 0; i < len; i++) {
+				console.log(i, btnNavAll[i]);
+			}
+
+			btnNavAll.forEach(function(t, i) {
+				console.log(i, t);
+			});
+
+			/**
+			 * Events
+			 */
+			
+			document.body.addEventListener("custom", doSomething, false);
+			function doSomething(e) {
+				console.log("Event is called: " + e.type);
+			}
+			var evtCustom = new CustomEvent("custom");
+
+			// event = new CustomEvent("custom");
+			// elc.dispatchEvent(event);
+
+			btnNavAll.forEach(function(t, i) {
+				t.addEventListener("click", function(e) {
+					console.log('Click', this, e);
+				});
+			});
+			
+			btnClass.addEventListener("click", function(e) {
+				console.log('Click', this, e);
+				elc.dispatchEvent(evtCustom);
+			});
+
+			btn.onclick = function () {
+			    console.log('Click', this);
+			};
+			btn.onmouseover = function () {
+			    console.log('MouseOver', this);
+			};
+			btn.onmouseout = function () {
+			    console.log('MouseOut', this);
+			};
+			btn.onmousedown = function() {
+				console.log('MouseDown', this);
+			};
+			btn.oncontextmenu = function() {
+				console.log('ConTextMenu', this);
+			};
+			btn.onmouseenter = function() {
+				console.log('MouseEnter', this);
+			};
+			btn.onmouseleave = function() {
+				console.log('MouseLeave', this);
+			};
+			btn.onmousemove = function() {
+				console.log('MouseMove', this);
+			};
+			btn.onmouseup = function() {
+				console.log('MouseUp', this);
+			};
+		});
+
+		if (window.NodeList && !NodeList.prototype.forEach) {
+		    NodeList.prototype.forEach = function (callback, thisArg) {
+		        thisArg = thisArg || window;
+		        var len = this.length;
+
+		        for (var i = 0; i < len; i++) {
+		            callback.call(thisArg, this[i], i, this);
+		        }
+		    };
+		}
+	</script>
+</body>
+</html>

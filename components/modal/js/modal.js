@@ -21,7 +21,8 @@
       maxWidth: 600,
       minWidth: 280,
       overlay: true
-    }
+    },
+    event;
 
     // Create options by extending defaults with the passed in arugments
     if (arguments[0] && typeof arguments[0] === "object") {
@@ -47,7 +48,7 @@
     });
   }
 
-  Modal.prototype.open = function() {
+  Modal.prototype.open = function(callback) {
     buildOut.call(this);
     initializeEvents.call(this);
     window.getComputedStyle(this.modal).height;
@@ -55,6 +56,14 @@
       (this.modal.offsetHeight > window.innerHeight ?
         " open anchored" : " open");
     this.overlay.className = this.overlay.className + " open";
+    
+    if (typeof callback === "function") {
+      callback();
+    }
+
+    if (typeof this.modal === 'object' && typeof event === "object") {
+      this.modal.dispatchEvent(event);
+    }
   }
 
   // Private Methods
@@ -132,6 +141,10 @@
       this.overlay.addEventListener('click', this.close.bind(this));
     }
 
+    if (this.modal) {
+      this.modal.addEventListener('modal.open', function(){});
+      event = new Event('build');
+    }
   }
 
   function transitionSelect() {
@@ -146,11 +159,25 @@
 var myContent = document.getElementById('content');
 
 var myModal = new Modal({
-  content: myContent
+  autoOpen: true,
+  content: myContent,
+  closeButton: false,
+  maxWidth: 300,
+  minWidth: 100,
+  // overlay: false
 });
+
+/*myModal.addEventListener('modal.open', function() {
+  console.log('Modal Open Event');
+});*/
 
 var triggerButton = document.getElementById('trigger');
 
 triggerButton.addEventListener('click', function() {
-  myModal.open();
+  myModal.open(function() {
+    console.log('Modal Open Callback');
+    /*this.addEventListener('modal.open', function() {
+      console.log('Modal Open Event');
+    });*/
+  });
 });

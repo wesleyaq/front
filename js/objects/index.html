@@ -21,13 +21,22 @@
 
 
 		var Msg = (function () {
+			//Constructor
 		    function Msg(message) {
+		    	//Attributes
 		        this.text = message;
 		    }
+
+		    //Public Methods
 		    Msg.prototype.getMessage = function () {
-		        return this.text;
+		        return this.text + ' ' + getName();
 		    };
 		    return Msg;
+
+		    // Private Methods
+		    function getName() {
+		    	return 'Name';
+		    }
 		}());
 
 		var msg = new Msg("2. Hello, world");
